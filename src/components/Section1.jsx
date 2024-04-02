@@ -1,10 +1,22 @@
-import React from "react";
+import React, {useState} from "react";
 import Navbar from "./Navbar";
 import Avatar from "../assets/xr-ava.png";
 import bgImage from "../assets/bg-section1-2.png";
 import Logo from "../assets/logo.png";
+import Modal from "./Modal";
 
 const Section1 = () => {
+  const [isOpenModal, setIsOpenModal] = useState(false);
+
+  const openModal = () => {
+    setIsOpenModal(true);
+  }
+
+  const closeModal = () => {
+    setIsOpenModal(false);
+  }
+
+
   return (
     <div
       style={{
@@ -70,7 +82,7 @@ const Section1 = () => {
                 tajribaga ega.
               </p>
               {/* Button */}
-              <button className="bg-blue-800 absolute left-0  md:relative text-white mr-4 p-2 w-[100%] md:w-[300px] rounded-[10px] flex justify-between">
+              <button onClick={openModal} className="bg-blue-800 absolute left-0  md:relative text-white mr-4 p-2 w-[100%] md:w-[300px] rounded-[10px] flex justify-between">
                 <div></div>
                 Maslahat olish
                 <svg
@@ -98,6 +110,7 @@ const Section1 = () => {
               />
             </div>
           </div>
+          {isOpenModal == true ? <Modal closeModal={closeModal} /> : <></>}
         </div>
       </div>
     </div>

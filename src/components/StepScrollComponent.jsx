@@ -125,7 +125,7 @@ export default function ProgressMobileStepper() {
   };
 
   return (
-    <div className="h:screen w-full flex-col md:bg-sky-700 flex justify-start items-center shadow-md z-10" style={{ boxShadow: '0px -31px 40px 4px rgba(0,73,150,0.77)' }}>
+    <div className="h:screen w-full flex-col md:bg-sky-700 flex justify-start items-center shadow-md" style={{ boxShadow: '0px -31px 40px 4px rgba(0,73,150,0.77)' }}>
       <div className="h-[300px] w-full bg-sky-700 flex justify-center  items-center">
         <div className="flex flex-col justify-center items-center w-full px-4">
           <MobileStepper
