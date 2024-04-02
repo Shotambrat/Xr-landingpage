@@ -1,21 +1,15 @@
 import React, { useState } from 'react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline'; // Install heroicons for these
-import Logo from '../assets/logo.png'
+
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <nav className="">
-      <div className="md:w-[700px] w-[200px] mx-auto px-4">
+      <div className="md:w-[700px] w-[70px] mx-auto px-4 self-start">
         <div className="flex justify-between w-full">
           <div className="flex space-x-7 w-full">
-            <div>
-              {/* Website Logo */}
-              <a href="#" className="flex items-center py-4 px-2">
-                <img className='relative top-4' src={Logo} />
-              </a>
-            </div>
             {/* Primary Navbar items */}
             <div className="hidden md:flex items-center md:justify-between w-full space-x-1">
               <a href="#" className="py-4 px-2 text-black font-extrabold">Men haqimda</a>

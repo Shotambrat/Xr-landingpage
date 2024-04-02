@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./Navbar";
 import Avatar from "../assets/xr-ava.png";
 import bgImage from "../assets/bg-section1-2.png";
+import Logo from "../assets/logo.png";
 
 const Section1 = () => {
   return (
@@ -12,56 +13,64 @@ const Section1 = () => {
         backgroundSize: "cover",
         backdropFilter: "blur(15px)",
       }}
-      className="flex justify-center w-screen h-screen"
+      className="flex justify-center w-full md:h-screen h-auto"
     >
       {/* Container for desktop and mobile view */}
-      <div className="w-[1300px] h-full">
+      <div className="max-w-[1300px] w-full h-full mx-auto px-4">
         {/* Header with logo and contact info */}
-        <header className="flex justify-between items-center w-full mt-16 p-4">
+        <header className="justify-between items-center w-full mt-4 md:mt-16 flex">
           <div>
-            <Navbar />
+            {/* Website Logo */}
+            <a href="/" className="flex items-center py-4 px-2">
+              <img className="relative top-4" src={Logo} />
+            </a>
           </div>
-          <div className="text-right">
-            <p className="text-lg font-bold">+998 33 303 77 99</p>
-            <div className="flex ">
-              <svg
-                width="15px"
-                height="15px"
-                viewBox="0 0 1024 1024"
-                class="icon"
-                version="1.1"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M523.9 986.4l-19.1-9.5c-16.6-8.3-407.6-207.7-407.6-550.2C97.2 191.4 288.6 0 523.9 0s426.7 191.4 426.7 426.7c0 342.4-390.9 541.8-407.6 550.2l-19.1 9.5z m0-901.1c-188.2 0-341.3 153.1-341.3 341.3 0 250.3 266.8 420.6 341.3 463.4 74.6-42.7 341.3-213.1 341.3-463.4 0-188.1-153.1-341.3-341.3-341.3z"
-                  fill="#3688FF"
-                />
-                <path
-                  d="M523.9 533.3c-70.6 0-128-57.4-128-128s57.4-128 128-128 128 57.4 128 128-57.5 128-128 128z m0-170.6c-23.5 0-42.7 19.1-42.7 42.7s19.1 42.7 42.7 42.7c23.5 0 42.7-19.1 42.7-42.7s-19.2-42.7-42.7-42.7z"
-                  fill="#5F6379"
-                />
-              </svg>
-              <p className="text-xs ml-2">Milliy tibbiyot markazi</p>
+          <div className="flex w-full justify-between md:flex-row flex-row-reverse">
+            <div>
+              <Navbar />
+            </div>
+            <div className="text-right">
+              <a href="tel: +998333037799" className="text-lg font-bold">+998 33 303 77 99</a>
+              <div className="flex ">
+                <svg
+                  width="15px"
+                  height="15px"
+                  viewBox="0 0 1024 1024"
+                  class="icon"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M523.9 986.4l-19.1-9.5c-16.6-8.3-407.6-207.7-407.6-550.2C97.2 191.4 288.6 0 523.9 0s426.7 191.4 426.7 426.7c0 342.4-390.9 541.8-407.6 550.2l-19.1 9.5z m0-901.1c-188.2 0-341.3 153.1-341.3 341.3 0 250.3 266.8 420.6 341.3 463.4 74.6-42.7 341.3-213.1 341.3-463.4 0-188.1-153.1-341.3-341.3-341.3z"
+                    fill="#3688FF"
+                  />
+                  <path
+                    d="M523.9 533.3c-70.6 0-128-57.4-128-128s57.4-128 128-128 128 57.4 128 128-57.5 128-128 128z m0-170.6c-23.5 0-42.7 19.1-42.7 42.7s19.1 42.7 42.7 42.7c23.5 0 42.7-19.1 42.7-42.7s-19.2-42.7-42.7-42.7z"
+                    fill="#5F6379"
+                  />
+                </svg>
+                <p className="text-xs ml-2">Milliy tibbiyot markazi</p>
+              </div>
             </div>
           </div>
         </header>
         {/* Content */}
         <div className="p-4 flex justify-center h-auto">
-          <div className="w-10/12 flex">
-            <div className="flex-1 ml-6 mt-[100px]">
-              <h1 className="text-[28px] font-bold mb-2 text-blue-900">
+          <div className="flex flex-row-reverse md:flex-col md:flex-row md:w-10/12 w-full">
+            <div className="flex-1 ml-6 md:w-[700px] md:mt-[100px] mt-0">
+              <h1 className="md:text-[28px] text-[14px] font-bold mb-2 text-blue-900">
                 Hashimov Hayrillo Rahmatullaevich
               </h1>
-              <p className="text-[36px] mb-4 font-extrabold">
+              <p className="md:text-[36px] text-[20px] mb-4 font-extrabold">
                 Yurak-qon tomir jarrohi
               </p>
-              <p className="text-lg mb-6">
+              <p className="md:text-lg text-[13px] mb-6">
                 Doktor Xayrillo Rahmatullaevich Hoshimov yetakchi yurak-qon
                 tomir jarrohi va intervention kardiolog sifatida 16 yildan ortiq
                 tajribaga ega.
               </p>
               {/* Button */}
-              <button className="bg-blue-800 text-white p-2 w-[300px] rounded-[10px] flex justify-between">
+              <button className="bg-blue-800 absolute left-0  md:relative text-white mr-4 p-2 w-[100%] md:w-[300px] rounded-[10px] flex justify-between">
                 <div></div>
                 Maslahat olish
                 <svg
@@ -83,7 +92,10 @@ const Section1 = () => {
               </button>
             </div>
             <div className="flex-1 justify-end flex">
-              <img className="absolute bottom-0 h-[450px]" src={Avatar} />
+              <img
+                className="md:relative absolute md:bottom-[297px] bottom-4 h-[300px] md:left-none -left-[60px] md:h-[450px]"
+                src={Avatar}
+              />
             </div>
           </div>
         </div>

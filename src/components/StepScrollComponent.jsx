@@ -35,17 +35,17 @@ export default function ProgressMobileStepper() {
       case 0:
         return (
           <div
-            className="relative -top-[100px] h-[400px] w-[950px] flex justify-between"
+            className="relative -top-[100px] h-[400px] max-w-[950px] flex justify-between"
             id="content1"
           >
-            <div className="h-full w-[350px] flex justify-center items-center">
+            <div className="h-[100px] md:h-full w-[200px] md:w-[350px] flex justify-center items-center">
               <div>
-                <ol className="list-disc text-2xl text-gray-200">
-                  <li className="mb-3">
+                <ol className="list-disc leading-1 md:text-2xl text-gray-200 text-[10px] md:text-xl">
+                  <li className="md:mb-3">
                     2018 yildan buyon AQShning ko'krak jarrohligi jamiyati
                     STS-xalqaro a'zosi hisoblanadi.
                   </li>
-                  <li className="mb-3">
+                  <li className="md:mb-3">
                     1000dan ortiq yurak-jarrohlik amaliyotlar.
                   </li>
                   <li>
@@ -55,27 +55,27 @@ export default function ProgressMobileStepper() {
                 </ol>
               </div>
             </div>
-            <div className="h-full w-auto">
-              {/* <img className="relative -top-20 -right-20" src={Serdce} /> */}
+            <div className="max-h-[200px] md:h-full md:w-auto">
+              <img className="relative md:-top-20 md:-right-20 w-[100px] md:w-full" src={Serdce} />
             </div>
           </div>
         );
       case 1:
         return (
           <div
-            className="relative -top-[100px] h-[400px] w-[950px] flex justify-between"
+            className="relative -top-[100px] h-[400px] max-w-[950px] flex justify-between"
             id="content2"
           >
-            <div className="h-full w-[450px] flex justify-center items-center">
+            <div className="h-[100px] md:h-full w-[200px] md:w-[350px] flex justify-center items-center">
               <div>
-                <ol className="list-decimal text-2xl text-gray-200">
-                  <li className="mb-3">
+                <ol className="list-decimal leading-1 md:text-xl text-gray-200 text-[10px] md:text-xl">
+                  <li className="md:mb-3">
                   Respublika ixtisoslashtirilgan ilmiy- amaliy tibbiyot markazi, kardiojarroh  (2021- 2023) yillar, Toshkent, O‘zbekiston
                   </li>
-                  <li className="mb-3">
+                  <li className="md:mb-3">
                   Salmon Al Dabbus Yurak Markazi, Al - Adan shifoxonasi, kardiojarroh (2014-2021) yillar, Quvayt davlati.
                   </li>
-                  <li className="mb-3">
+                  <li className="md:mb-3">
                   Respublika shoshilinch tibbiy yordam ilmiy markazi, kardiojarroh (2010-2013) yillar, Toshkent, O‘zbekiston.
 
                   </li>
@@ -86,25 +86,25 @@ export default function ProgressMobileStepper() {
                 </ol>
               </div>
             </div>
-            <div className="h-full w-auto">
-              <img className="relative -top-20 -right-20" src={LikeStep} />
+            <div className="max-h-[200px] md:h-full md:w-auto">
+              <img className="relative md:-top-20 md:-right-20 w-[100px] md:w-full" src={LikeStep} />
             </div>
           </div>
         );
       case 2:
         return (
           <div
-            className="relative -top-[100px] h-[400px] w-[950px] flex justify-between"
+            className="relative -top-[100px] h-[400px] max-w-[950px] flex justify-between"
             id="content3"
           >
-            <div className="h-full w-[400px] flex justify-center items-center">
+            <div className="h-[100px] md:h-full w-[200px] md:w-[350px] flex justify-center items-center">
               <div>
-                <ol className="list-disc text-2xl text-gray-200">
-                  <li className="mb-3">
+                <ol className="list-disc leading-1 md:text-2xl text-gray-200 text-[10px] md:text-xl">
+                  <li className="md:mb-3">
                   Toshkent shifokorlar malaka oshirish instituti  (2023-2024) yillar, Intervension kardiologiya bo‘yicha qayta tayyorlash kursi.
 
                   </li>
-                  <li className="mb-3">
+                  <li className="md:mb-3">
                   Toshkent tibbiyot akademiyasi (2006-2008) yillar, Yurak-qon tomir jarrohligi bo‘yicha klinik ordinatura.
 
                   </li>
@@ -114,8 +114,8 @@ export default function ProgressMobileStepper() {
                 </ol>
               </div>
             </div>
-            <div className="h-full w-auto">
-              <img className="relative -top-20 -right-20" src={GradCap} />
+            <div className="max-h-[200px] md:h-full md:w-auto">
+              <img className="relative md:-top-20 md:-right-20 w-[100px] md:w-full" src={GradCap} />
             </div>
           </div>
         );
@@ -125,9 +125,9 @@ export default function ProgressMobileStepper() {
   };
 
   return (
-    <div className="h-screen w-full flex-col bg-sky-700 flex justify-start items-center shadow-md z-10" style={{ boxShadow: '0px -31px 40px 4px rgba(0,73,150,0.77)' }}>
-      <div className="h-[300px] w-full bg-sky-700 flex justify-center items-center">
-        <div className="flex flex-col items-center w-full px-4">
+    <div className="h:screen w-full flex-col md:bg-sky-700 flex justify-start items-center shadow-md z-10" style={{ boxShadow: '0px -31px 40px 4px rgba(0,73,150,0.77)' }}>
+      <div className="h-[300px] w-full bg-sky-700 flex justify-center  items-center">
+        <div className="flex flex-col justify-center items-center w-full px-4">
           <MobileStepper
             variant="progress"
             steps={maxSteps}
@@ -159,7 +159,7 @@ export default function ProgressMobileStepper() {
             {/* Установка ширины на 100% и центрирование текста */}
             <Button
               onClick={handleStep(0)}
-              className={`flex flex-col relative left-[8.7%] -top-10 w-10 ${
+              className={`flex flex-col md:text-xl text-[12px] leading-5 md:leading-8 relative left-[8.7%] -top-10 w-10 ${
                 activeStep === 0 ? "text-white" : "text-gray-500"
               }`}
             >
@@ -179,7 +179,7 @@ export default function ProgressMobileStepper() {
             </Button>
             <Button
               onClick={handleStep(1)}
-              className={`flex flex-col w-10 relative text-center -top-10 ${
+              className={`flex flex-col w-10 md:text-xl text-[12px] leading-5 md:leading-8 relative text-center -top-10 ${
                 activeStep === 1 ? "text-white" : "text-gray-500"
               }`}
             >
@@ -199,7 +199,7 @@ export default function ProgressMobileStepper() {
             </Button>
             <Button
               onClick={handleStep(2)}
-              className={`flex flex-col w-10 -top-[52px] right-[8.7%] ${
+              className={`flex flex-col w-10 md:text-xl text-[12px] leading-5 md:leading-8 -top-[52px] right-[8.7%] ${
                 activeStep === 2 ? "text-white" : "text-gray-500"
               }`}
             >
