@@ -1,49 +1,227 @@
-import * as React from 'react';
-import { useTheme } from '@mui/material/styles';
-import MobileStepper from '@mui/material/MobileStepper';
-import Button from '@mui/material/Button';
-import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
+import React, { useState, useRef, useEffect } from "react";
+import MobileStepper from "@mui/material/MobileStepper";
+import Button from "@mui/material/Button";
+import gsap from "gsap";
+import Serdce from "../assets/serdce.png";
+import LikeStep from "../assets/like-step.png";
+import GradCap from "../assets/grad-cap.png";
 
 export default function ProgressMobileStepper() {
-  const theme = useTheme();
-  const [activeStep, setActiveStep] = React.useState(0);
+  const [activeStep, setActiveStep] = useState(0);
+  const contentRef = useRef();
+  const maxSteps = 3; // Определите максимальное количество шагов
 
-  const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  const handleStep = (step) => () => {
+    setActiveStep(step);
   };
 
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  useEffect(() => {
+    if (contentRef.current) {
+      gsap.fromTo(
+        contentRef.current,
+        { y: -100, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "bounce.out",
+        }
+      );
+    }
+  }, [activeStep]);
+
+  const renderContent = () => {
+    switch (activeStep) {
+      case 0:
+        return (
+          <div
+            className="relative -top-[100px] h-[400px] w-[950px] flex justify-between"
+            id="content1"
+          >
+            <div className="h-full w-[350px] flex justify-center items-center">
+              <div>
+                <ol className="list-disc text-2xl text-gray-200">
+                  <li className="mb-3">
+                    2018 yildan buyon AQShning ko'krak jarrohligi jamiyati
+                    STS-xalqaro a'zosi hisoblanadi.
+                  </li>
+                  <li className="mb-3">
+                    1000dan ortiq yurak-jarrohlik amaliyotlar.
+                  </li>
+                  <li>
+                    Minimal invaziv jarrohlik yangi uslublarini ishlab chiqishda
+                    ishtirok etish.
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <div className="h-full w-auto">
+              {/* <img className="relative -top-20 -right-20" src={Serdce} /> */}
+            </div>
+          </div>
+        );
+      case 1:
+        return (
+          <div
+            className="relative -top-[100px] h-[400px] w-[950px] flex justify-between"
+            id="content2"
+          >
+            <div className="h-full w-[450px] flex justify-center items-center">
+              <div>
+                <ol className="list-decimal text-2xl text-gray-200">
+                  <li className="mb-3">
+                  Respublika ixtisoslashtirilgan ilmiy- amaliy tibbiyot markazi, kardiojarroh  (2021- 2023) yillar, Toshkent, O‘zbekiston
+                  </li>
+                  <li className="mb-3">
+                  Salmon Al Dabbus Yurak Markazi, Al - Adan shifoxonasi, kardiojarroh (2014-2021) yillar, Quvayt davlati.
+                  </li>
+                  <li className="mb-3">
+                  Respublika shoshilinch tibbiy yordam ilmiy markazi, kardiojarroh (2010-2013) yillar, Toshkent, O‘zbekiston.
+
+                  </li>
+                  <li>
+                  Andijon davlat tibbiyot instituti klinikasi, karidojarroh (2008-2010) yillar, Andijon, O‘zbekiston.
+
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <div className="h-full w-auto">
+              <img className="relative -top-20 -right-20" src={LikeStep} />
+            </div>
+          </div>
+        );
+      case 2:
+        return (
+          <div
+            className="relative -top-[100px] h-[400px] w-[950px] flex justify-between"
+            id="content3"
+          >
+            <div className="h-full w-[400px] flex justify-center items-center">
+              <div>
+                <ol className="list-disc text-2xl text-gray-200">
+                  <li className="mb-3">
+                  Toshkent shifokorlar malaka oshirish instituti  (2023-2024) yillar, Intervension kardiologiya bo‘yicha qayta tayyorlash kursi.
+
+                  </li>
+                  <li className="mb-3">
+                  Toshkent tibbiyot akademiyasi (2006-2008) yillar, Yurak-qon tomir jarrohligi bo‘yicha klinik ordinatura.
+
+                  </li>
+                  <li>
+                  Andijon davlat tibbiyot instituti (1999-2006) yillar.
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <div className="h-full w-auto">
+              <img className="relative -top-20 -right-20" src={GradCap} />
+            </div>
+          </div>
+        );
+      default:
+        return null;
+    }
   };
 
   return (
-    <MobileStepper
-      variant="progress"
-      steps={6}
-      position="static"
-      activeStep={activeStep}
-      sx={{ maxWidth: 400, flexGrow: 1 }}
-      nextButton={
-        <Button size="small" onClick={handleNext} disabled={activeStep === 5}>
-          Next
-          {theme.direction === 'rtl' ? (
-            <KeyboardArrowLeft />
-          ) : (
-            <KeyboardArrowRight />
-          )}
-        </Button>
-      }
-      backButton={
-        <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-          {theme.direction === 'rtl' ? (
-            <KeyboardArrowRight />
-          ) : (
-            <KeyboardArrowLeft />
-          )}
-          Back
-        </Button>
-      }
-    />
+    <div className="h-screen w-full flex-col bg-sky-700 flex justify-start items-center shadow-md z-10" style={{ boxShadow: '0px -31px 40px 4px rgba(0,73,150,0.77)' }}>
+      <div className="h-[300px] w-full bg-sky-700 flex justify-center items-center">
+        <div className="flex flex-col items-center w-full px-4">
+          <MobileStepper
+            variant="progress"
+            steps={maxSteps}
+            position="static"
+            activeStep={activeStep}
+            sx={{
+              width: "100%",
+              flexGrow: 1,
+              backgroundColor: "transparent",
+              flexDirection: "column",
+              "& .MuiLinearProgress-barColorPrimary": {
+                backgroundColor: "#02005B",
+              },
+              "& .MuiMobileStepper-dot": {
+                backgroundColor: "black", // Задает цвет неактивных точек
+              },
+              "& .MuiMobileStepper-dotActive": {
+                backgroundColor: "white", // Задает цвет активной точки
+              },
+            }} // Установка фона лоадера в прозрачный
+            classes={{
+              root: "w-full",
+              dot: "bg-white",
+              dotActive: "bg-sky-900",
+            }} // Кастомные классы для точек лоадера
+          />
+          <div className="flex justify-around w-full text-center">
+            {" "}
+            {/* Установка ширины на 100% и центрирование текста */}
+            <Button
+              onClick={handleStep(0)}
+              className={`flex flex-col relative left-[8.7%] -top-10 w-10 ${
+                activeStep === 0 ? "text-white" : "text-gray-500"
+              }`}
+            >
+              <svg
+                width="26"
+                height="23"
+                viewBox="0 0 26 23"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13 23L25.9904 0.5H0.00961876L13 23Z"
+                  fill={`${activeStep === 0 ? "#fff" : "#8E8D8D"}`}
+                />
+              </svg>
+              Mening yutuqlarim
+            </Button>
+            <Button
+              onClick={handleStep(1)}
+              className={`flex flex-col w-10 relative text-center -top-10 ${
+                activeStep === 1 ? "text-white" : "text-gray-500"
+              }`}
+            >
+              <svg
+                width="26"
+                height="23"
+                viewBox="0 0 26 23"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13 23L25.9904 0.5H0.00961876L13 23Z"
+                  fill={`${activeStep === 1 ? "#fff" : "#8E8D8D"}`}
+                />
+              </svg>
+              Ish tajribasi
+            </Button>
+            <Button
+              onClick={handleStep(2)}
+              className={`flex flex-col w-10 -top-[52px] right-[8.7%] ${
+                activeStep === 2 ? "text-white" : "text-gray-500"
+              }`}
+            >
+              <svg
+                width="26"
+                height="23"
+                viewBox="0 0 26 23"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13 23L25.9904 0.5H0.00961876L13 23Z"
+                  fill={`${activeStep === 2 ? "#fff" : "#8E8D8D"}`}
+                />
+              </svg>
+              Ta'lim
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      <div ref={contentRef}>{renderContent()}</div>
+    </div>
   );
 }

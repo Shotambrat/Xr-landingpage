@@ -12,7 +12,7 @@ const Section1 = () => {
         backgroundSize: "cover",
         backdropFilter: "blur(15px)",
       }}
-      className="flex justify-center w-full h-screen"
+      className="flex justify-center w-screen h-screen"
     >
       {/* Container for desktop and mobile view */}
       <div className="w-[1300px] h-full">
