@@ -2,7 +2,7 @@ import React from 'react'
 
 const Section4 = () => {
   return (
-    <div className='h-auto md:h-[200px] md:h-[270px] w-full flex justify-center items-center bg-blue-800'>
+    <div id='section-four' className='h-auto md:h-[200px] md:h-[270px] w-full flex justify-center items-center bg-blue-800'>
       <div className='md:h-full md:w-[80%] h-full flex flex-col justify-around items-center'>
         <h2 className='text-white text-2xl md:text-5xl'>
         Ixtisoslik
