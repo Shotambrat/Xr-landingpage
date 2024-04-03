@@ -25,7 +25,7 @@ const Section1 = () => {
         backgroundSize: "cover",
         backdropFilter: "blur(15px)",
       }}
-      className="flex justify-center w-full md:h-screen h-auto"
+      className="flex justify-center w-full h-screen"
     >
       {/* Container for desktop and mobile view */}
       <div className="max-w-[1300px] w-full h-full mx-auto px-4">
@@ -68,9 +68,9 @@ const Section1 = () => {
         </header>
         {/* Content */}
         <div className="p-4 flex justify-center h-auto">
-          <div className="flex flex-row-reverse md:flex-col md:flex-row md:w-10/12 w-full">
+          <div className="flex flex-row-reverse flex-col-reverse md:flex-col md:w-10/12 w-full">
             <div className="flex-1 ml-6 md:w-[700px] md:mt-[100px] mt-0">
-              <h1 className="md:text-[28px] text-[14px] font-bold mb-2 text-blue-900">
+              <h1 className="md:text-[28px] text-[15px] font-bold mb-2 text-blue-900">
                 Hashimov Hayrillo Rahmatullaevich
               </h1>
               <p className="md:text-[36px] text-[20px] mb-4 font-extrabold">
@@ -105,9 +105,9 @@ const Section1 = () => {
             </div>
             <div className="flex-1 justify-end flex">
               <img
-                className="md:relative absolute md:bottom-[297px] bottom-4 h-[300px] md:left-none -left-[60px] md:h-[450px]"
+                className="md:relative md:bottom-[297px] bottom-4 h-auto md:left-none -left-[60px] md:h-[450px]"
                 src={Avatar}
-              />
+              />  
             </div>
           </div>
           {isOpenModal == true ? <Modal closeModal={closeModal} /> : <></>}

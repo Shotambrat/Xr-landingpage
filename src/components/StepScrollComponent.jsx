@@ -125,8 +125,8 @@ export default function ProgressMobileStepper() {
   };
 
   return (
-    <div className="h:screen w-full flex-col md:bg-sky-700 flex justify-start items-center shadow-md" style={{ boxShadow: '0px -31px 40px 4px rgba(0,73,150,0.77)' }}>
-      <div className="h-[300px] w-full bg-sky-700 flex justify-center  items-center">
+    <div className="h:screen w-full flex-col md:bg-customBlue flex justify-start items-center shadow-md" style={{ boxShadow: '0px -31px 40px 4px rgba(0,73,150,0.77)' }}>
+      <div className="h-[300px] w-full bg-customBlue flex justify-center  items-center">
         <div className="flex flex-col justify-center items-center w-full px-4">
           <MobileStepper
             variant="progress"
@@ -134,12 +134,13 @@ export default function ProgressMobileStepper() {
             position="static"
             activeStep={activeStep}
             sx={{
+              
               width: "100%",
               flexGrow: 1,
               backgroundColor: "transparent",
               flexDirection: "column",
               "& .MuiLinearProgress-barColorPrimary": {
-                backgroundColor: "#02005B",
+                backgroundColor: "#777676",
               },
               "& .MuiMobileStepper-dot": {
                 backgroundColor: "black", // Задает цвет неактивных точек
@@ -147,14 +148,17 @@ export default function ProgressMobileStepper() {
               "& .MuiMobileStepper-dotActive": {
                 backgroundColor: "white", // Задает цвет активной точки
               },
+              '@media (max-width: 768px)': {
+                display: 'none',
+              },
             }} // Установка фона лоадера в прозрачный
             classes={{
               root: "w-full",
               dot: "bg-white",
-              dotActive: "bg-sky-900",
+              dotActive: "bg-sky-200",
             }} // Кастомные классы для точек лоадера
           />
-          <div className="flex justify-around w-full text-center">
+          <div className=" relative -top-10 md:top-0 flex justify-around w-full text-center">
             {" "}
             {/* Установка ширины на 100% и центрирование текста */}
             <Button
@@ -221,7 +225,7 @@ export default function ProgressMobileStepper() {
         </div>
       </div>
 
-      <div ref={contentRef}>{renderContent()}</div>
+      <div className="relative -top-12 md:top-0" ref={contentRef}>{renderContent()}</div>
     </div>
   );
 }
