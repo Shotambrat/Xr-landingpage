@@ -1,37 +1,35 @@
 import React, { useState } from 'react';
-import { MenuIcon, XIcon } from '@heroicons/react/outline'; // Install heroicons for these
-
+import { MenuIcon, XIcon } from '@heroicons/react/outline';
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="">
-      <div className="md:w-[700px] w-[70px] mx-auto px-4 self-start">
-        <div className="flex justify-between w-full">
-          <div className="flex space-x-7 w-full">
-            {/* Primary Navbar items */}
-            <div className="hidden md:flex items-center md:justify-between w-full space-x-1">
-              <a href="#" className="py-4 px-2 text-black font-extrabold">Men haqimda</a>
-              <a href="#" className="py-4 px-2 text-black font-extrabold">Ixtisoslik</a>
-              <a href="#" className="py-4 px-2 text-black font-extrabold">Xizmatlar</a>
-              <a href="#" className="py-4 px-2 text-black font-extrabold">Aloqa</a>
-            </div>
-          </div>
+    <nav className="relative">
+      <div className="md:w-[700px] w-full mx-auto px-4">
+        <div className="flex justify-between items-center w-full">
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+          <div className="flex items-center md:hidden">
             <button type="button" className="outline-none mobile-menu-button" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-              <MenuIcon className="w-6 h-6 text-gray-500"/>
+              {mobileMenuOpen ? <XIcon className="w-8 h-8 text-gray-700" /> : <MenuIcon className="w-8 h-8 text-gray-700" />}
             </button>
+          </div>
+
+          {/* Primary Navbar items */}
+          <div className="hidden md:flex items-center justify-between w-full space-x-1">
+            <a href="#" className="py-4 px-2 text-black font-extrabold">Men haqimda</a>
+            <a href="#" className="py-4 px-2 text-black font-extrabold">Ixtisoslik</a>
+            <a href="#" className="py-4 px-2 text-black font-extrabold">Xizmatlar</a>
+            <a href="#" className="py-4 px-2 text-black font-extrabold">Aloqa</a>
           </div>
         </div>
       </div>
       {/* Mobile Menu */}
-      <div className={`md:hidden ${mobileMenuOpen ? 'block' : 'hidden'} justify-between`}>
-        <a href="#" className="block py-2 px-4 text-sm hover:bg-gray-200">Men haqimda</a>
-        <a href="#" className="block py-2 px-4 text-sm hover:bg-gray-200">Ixtisoslik</a>
-        <a href="#" className="block py-2 px-4 text-sm hover:bg-gray-200">Xizmatlar</a>
-        <a href="#" className="block py-2 px-4 text-sm hover:bg-gray-200">Aloqa</a>
+      <div className={`md:hidden ${mobileMenuOpen ? 'fixed' : 'hidden'} top-0 left-0 h-full z-40 w-64 bg-white shadow-xl transition-transform transform ${mobileMenuOpen ? "translate-x-0" : "-translate-x-full"}`}>
+        <a href="#" className="block py-4 px-4 text-sm text-gray-700 hover:bg-gray-200 mt-24">Men haqimda</a>
+        <a href="#" className="block py-4 px-4 text-sm text-gray-700 hover:bg-gray-200">Ixtisoslik</a>
+        <a href="#" className="block py-4 px-4 text-sm text-gray-700 hover:bg-gray-200">Xizmatlar</a>
+        <a href="#" className="block py-4 px-4 text-sm text-gray-700 hover:bg-gray-200">Aloqa</a>
       </div>
     </nav>
   );
