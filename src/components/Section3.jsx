@@ -7,7 +7,7 @@ import MedNotes from "../assets/med-notes.png";
 
 const Section3 = () => {
   return (
-    <div className="md:w-full md:h-screen bg-white flex justify-center items-center md:relative md:top-0 absolute top-[1100px]">
+    <div className="md:w-full md:h-screen bg-white flex justify-center items-center md:relative md:top-0 absolute top-[1200px]">
       <div className="flex md:w-[80%] md:h-[90%] justify-around flex-col w-full h-full">
         <div className="w-full h-auto flex justify-around items-center">
           <div className="md:h-[200px] flex justify-center items-center flex-col text-center">
