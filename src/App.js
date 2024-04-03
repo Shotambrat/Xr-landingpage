@@ -7,6 +7,8 @@ import Services from './components/Services';
 import Otzivi from './components/Otzivi';
 import Connect from './components/Connect';
 import Footer from './components/Footer';
+import Services2 from './components/Services2';
+import Services3 from './components/Services3';
 
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
       <Section3 />
       <Section4 />
       <Services />
+      {/* <Services2 /> */}
+      {/* <Services3 /> */}
       <Otzivi />
       <Connect />
       <Footer />

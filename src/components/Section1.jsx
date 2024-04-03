@@ -29,6 +29,9 @@ const Section1 = () => {
     >
       {/* Container for desktop and mobile view */}
       <div className="max-w-[1300px] w-full h-full mx-auto px-4">
+      <div style={{boxShadow: "inset 0px -140px 43px -39px #0E3963", zIndex: 10}} className="shadow-wrapper left-0 absolute bottom-0 h-[140px] w-full"> {/* Обертка для тени с более высоким z-index */}
+      {/* Остальной контент, включая заголовок и т.д. */}
+    </div>
         {/* Header with logo and contact info */}
         <header className="justify-between items-center w-full mt-4 md:mt-16 flex">
           <div>
@@ -68,9 +71,9 @@ const Section1 = () => {
         </header>
         {/* Content */}
         <div className="p-4 flex justify-center h-auto">
-          <div className="flex flex-row-reverse flex-col-reverse md:flex-col md:w-10/12 w-full">
+          <div className="flex flex-row-reverse flex-col md:flex-col md:w-10/12 w-full">
             <div className="flex-1 ml-6 md:w-[700px] md:mt-[100px] mt-0">
-              <h1 className="md:text-[28px] text-[15px] font-bold mb-2 text-blue-900">
+              <h1 className="md:text-[28px] text-[20px] font-bold mb-2 text-blue-900">
                 Hashimov Hayrillo Rahmatullaevich
               </h1>
               <p className="md:text-[36px] text-[20px] mb-4 font-extrabold">
@@ -82,7 +85,7 @@ const Section1 = () => {
                 tajribaga ega.
               </p>
               {/* Button */}
-              <button onClick={openModal} className="bg-blue-800 absolute left-0  md:relative text-white mr-4 p-2 w-[100%] md:w-[300px] rounded-[10px] flex justify-between">
+              <button onClick={openModal} className="bg-blue-800 absolute left-7 md:left-0  md:relative text-white mr-4 p-2 w-[85%] md:w-[300px] rounded-[10px] flex justify-between">
                 <div></div>
                 Maslahat olish
                 <svg
@@ -105,7 +108,7 @@ const Section1 = () => {
             </div>
             <div className="flex-1 justify-end flex">
               <img
-                className="md:relative md:bottom-[297px] bottom-4 h-auto md:left-none -left-[60px] md:h-[450px]"
+                className="md:relative absolute bottom-0 md:bottom-[297px] h-auto scale-75 md:scale-100 md:left-none -left-[60px] md:h-[450px] z-1"
                 src={Avatar}
               />  
             </div>

@@ -8,19 +8,19 @@ const Section4 = () => {
         Ixtisoslik
         </h2>
         <div className='w-full h-1/2 flex justify-between flex-col md:flex-row text-[14px] md:text-xl'>
-            <div className='w-full md:w-1/4 h-[70px] md:h-[120px] mt-4 md:mt-0 bg-white flex justify-center items-center md:rounded-[30px] rounded-[10px]'>
+            <div className='w-[250px] md:w-1/4 h-[90px] md:h-[120px] mt-4 md:mt-0 bg-white flex justify-center items-center md:rounded-[30px] rounded-[10px]'>
                 <p>
                 Yurak-qon tomir jarrohligi
                 </p>
             </div>
-            <div className='w-full md:w-1/4 h-[70px] md:h-[120px] mt-4 md:mt-0 bg-white flex justify-center items-center md:rounded-[30px] rounded-[10px]'>
+            <div className='w-full md:w-1/4 h-[90px] md:h-[120px] mt-4 md:mt-0 bg-white flex justify-center items-center md:rounded-[30px] rounded-[10px]'>
                 <p>
-                Yurak-qon tomir jarrohligi
+                Intervension kardiologiya
                 </p>    
             </div>
-            <div className='w-full md:w-1/4 h-[70px] md:h-[120px] mb-4 md:mb-0 mt-4 md:mt-0 bg-white flex justify-center items-center md:rounded-[30px] rounded-[10px]'>
+            <div className='w-full md:w-1/4 h-[90px] md:h-[120px] mb-4 md:mb-0 mt-4 md:mt-0 bg-white flex justify-center items-center md:rounded-[30px] rounded-[10px]'>
                 <p>
-                Yurak-qon tomir jarrohligi
+                Minimal invaziv  kardiojarrohlik
                 </p>
             </div>
         </div>

@@ -5,15 +5,15 @@ const Footer = () => {
   return (
     <div className="bg-blue-700 w-full h-[200px] md:h-[300px] flex justify-center items-center">
       <div className="w-full md:w-[70%] h-[70%] md:h-[50%] flex justify-between items-center">
-        <div className="h-2/3 md:h-full md:w-1/3 flex items-center">
+        <div className="h-2/3 md:h-full md:w-1/3 ml-6 flex items-center">
           <img className="h-full" src={FooterLogo} />
         </div>
         <div className="flex-1 flex md:flex-row flex-col items-center md:justify-between">
           <div className="flex justify-around md:justify-between w-[80%] md:w-1/3 items-center">
             <div>
               <svg
-                width="40px"
-                height="40px"
+                width="30px"
+                height="30px"
                 viewBox="0 0 100 100"
                 stroke="white"
                 stroke-width="5"
@@ -34,8 +34,8 @@ const Footer = () => {
             </div>
             <div>
               <svg
-                width="40px"
-                height="40px"
+                width="30px"
+                height="30px"
                 viewBox="0 0 20 20"
                 stroke="white"
                 stroke-width="5"
@@ -66,8 +66,8 @@ const Footer = () => {
             </div>
             <div>
               <svg
-                width="40px"
-                height="40px"
+                width="30px"
+                height="30px"
                 viewBox="0 0 24 24"
                 fill="white"
                 xmlns="http://www.w3.org/2000/svg"
@@ -83,13 +83,13 @@ const Footer = () => {
           </div>
           <div className="flex flex-col justify-between items-center md:items-end h-full w-full md:w-1/3 mt-4 md:mt-0 text-white">
             <a href="gmail: hayrullomd@gmail.com">hayrullomd@gmail.com</a>
-            <a href="tel: +998 33 303 77 99" className="text-xl">
+            <a href="tel: +998 33 303 77 99" className="text-md md:text-xl mt-2">
               +998 33 303 77 99
             </a>
-            <a href="tel: +998 90 098 00 61" className="text-xl">
+            <a href="tel: +998 90 098 00 61" className="text-md md:text-xl">
               +998 90 098 00 61
             </a>
-            <div className="flex ">
+            <div className="flex mt-2">
               <svg
                 width="15px"
                 height="15px"

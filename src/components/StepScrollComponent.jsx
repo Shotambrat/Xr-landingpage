@@ -56,7 +56,10 @@ export default function ProgressMobileStepper() {
               </div>
             </div>
             <div className="max-h-[200px] md:h-full md:w-auto">
-              <img className="relative md:-top-20 md:-right-20 w-[100px] md:w-full" src={Serdce} />
+              <img
+                className="relative md:-top-20 md:-right-20 w-[100px] md:w-full"
+                src={Serdce}
+              />
             </div>
           </div>
         );
@@ -70,24 +73,30 @@ export default function ProgressMobileStepper() {
               <div>
                 <ol className="list-decimal leading-1 md:text-xl text-gray-200 text-[10px] md:text-xl">
                   <li className="md:mb-3">
-                  Respublika ixtisoslashtirilgan ilmiy- amaliy tibbiyot markazi, kardiojarroh  (2021- 2023) yillar, Toshkent, O‘zbekiston
+                    Respublika ixtisoslashtirilgan ilmiy- amaliy tibbiyot
+                    markazi, kardiojarroh (2021- 2023) yillar, Toshkent,
+                    O‘zbekiston
                   </li>
                   <li className="md:mb-3">
-                  Salmon Al Dabbus Yurak Markazi, Al - Adan shifoxonasi, kardiojarroh (2014-2021) yillar, Quvayt davlati.
+                    Salmon Al Dabbus Yurak Markazi, Al - Adan shifoxonasi,
+                    kardiojarroh (2014-2021) yillar, Quvayt davlati.
                   </li>
                   <li className="md:mb-3">
-                  Respublika shoshilinch tibbiy yordam ilmiy markazi, kardiojarroh (2010-2013) yillar, Toshkent, O‘zbekiston.
-
+                    Respublika shoshilinch tibbiy yordam ilmiy markazi,
+                    kardiojarroh (2010-2013) yillar, Toshkent, O‘zbekiston.
                   </li>
                   <li>
-                  Andijon davlat tibbiyot instituti klinikasi, karidojarroh (2008-2010) yillar, Andijon, O‘zbekiston.
-
+                    Andijon davlat tibbiyot instituti klinikasi, karidojarroh
+                    (2008-2010) yillar, Andijon, O‘zbekiston.
                   </li>
                 </ol>
               </div>
             </div>
             <div className="max-h-[200px] md:h-full md:w-auto">
-              <img className="relative md:-top-20 md:-right-20 w-[100px] md:w-full" src={LikeStep} />
+              <img
+                className="relative md:-top-20 md:-right-20 w-[100px] md:w-full"
+                src={LikeStep}
+              />
             </div>
           </div>
         );
@@ -101,21 +110,23 @@ export default function ProgressMobileStepper() {
               <div>
                 <ol className="list-disc leading-1 md:text-2xl text-gray-200 text-[10px] md:text-xl">
                   <li className="md:mb-3">
-                  Toshkent shifokorlar malaka oshirish instituti  (2023-2024) yillar, Intervension kardiologiya bo‘yicha qayta tayyorlash kursi.
-
+                    Toshkent shifokorlar malaka oshirish instituti (2023-2024)
+                    yillar, Intervension kardiologiya bo‘yicha qayta tayyorlash
+                    kursi.
                   </li>
                   <li className="md:mb-3">
-                  Toshkent tibbiyot akademiyasi (2006-2008) yillar, Yurak-qon tomir jarrohligi bo‘yicha klinik ordinatura.
-
+                    Toshkent tibbiyot akademiyasi (2006-2008) yillar, Yurak-qon
+                    tomir jarrohligi bo‘yicha klinik ordinatura.
                   </li>
-                  <li>
-                  Andijon davlat tibbiyot instituti (1999-2006) yillar.
-                  </li>
+                  <li>Andijon davlat tibbiyot instituti (1999-2006) yillar.</li>
                 </ol>
               </div>
             </div>
             <div className="max-h-[200px] md:h-full md:w-auto">
-              <img className="relative md:-top-20 md:-right-20 w-[100px] md:w-full" src={GradCap} />
+              <img
+                className="relative md:-top-20 md:-right-20 w-[100px] md:w-full"
+                src={GradCap}
+              />
             </div>
           </div>
         );
@@ -125,7 +136,10 @@ export default function ProgressMobileStepper() {
   };
 
   return (
-    <div className="h:screen w-full flex-col md:bg-customBlue flex justify-start items-center shadow-md" style={{ boxShadow: '0px -31px 40px 4px rgba(0,73,150,0.77)' }}>
+    <div
+      className="h:screen w-full flex-col md:bg-customBlue flex justify-start items-center shadow-md"
+      style={{ boxShadow: "0px -31px 40px 4px rgba(0,73,150,0.77)" }}
+    >
       <div className="h-[300px] w-full bg-customBlue flex justify-center  items-center">
         <div className="flex flex-col justify-center items-center w-full px-4">
           <MobileStepper
@@ -134,7 +148,6 @@ export default function ProgressMobileStepper() {
             position="static"
             activeStep={activeStep}
             sx={{
-              
               width: "100%",
               flexGrow: 1,
               backgroundColor: "transparent",
@@ -148,8 +161,8 @@ export default function ProgressMobileStepper() {
               "& .MuiMobileStepper-dotActive": {
                 backgroundColor: "white", // Задает цвет активной точки
               },
-              '@media (max-width: 768px)': {
-                display: 'none',
+              "@media (max-width: 768px)": {
+                display: "none",
               },
             }} // Установка фона лоадера в прозрачный
             classes={{
@@ -163,69 +176,98 @@ export default function ProgressMobileStepper() {
             {/* Установка ширины на 100% и центрирование текста */}
             <Button
               onClick={handleStep(0)}
-              className={`flex flex-col md:text-xl text-[12px] leading-5 md:leading-8 relative left-[8.7%] -top-10 w-10 ${
+              sx={{
+                fontSize: "16px",
+                color: "white",
+                "@media (max-width:600px)": {
+                  fontSize: "8px", // размер шрифта для экранов шире 600px
+                },
+              }}
+              className={`flex flex-col md:text-xl text-sm leading-5 md:leading-8 relative left-[8.7%] -top-10 w-10 ${
                 activeStep === 0 ? "text-white" : "text-gray-500"
               }`}
             >
-              <svg
-                width="26"
-                height="23"
-                viewBox="0 0 26 23"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M13 23L25.9904 0.5H0.00961876L13 23Z"
-                  fill={`${activeStep === 0 ? "#fff" : "#8E8D8D"}`}
-                />
-              </svg>
+              <div className="hidden md:block">
+                <svg
+                  width="26"
+                  height="23"
+                  viewBox="0 0 26 23"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13 23L25.9904 0.5H0.00961876L13 23Z"
+                    fill={`${activeStep === 0 ? "#fff" : "#8E8D8D"}`}
+                  />
+                </svg>
+              </div>
               Mening yutuqlarim
             </Button>
             <Button
               onClick={handleStep(1)}
+              sx={{
+                fontSize: "16px",
+                color: "white",
+                "@media (max-width:600px)": {
+                  fontSize: "8px", // размер шрифта для экранов шире 600px
+                },
+              }}
               className={`flex flex-col w-10 md:text-xl text-[12px] leading-5 md:leading-8 relative text-center -top-10 ${
                 activeStep === 1 ? "text-white" : "text-gray-500"
               }`}
             >
-              <svg
-                width="26"
-                height="23"
-                viewBox="0 0 26 23"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M13 23L25.9904 0.5H0.00961876L13 23Z"
-                  fill={`${activeStep === 1 ? "#fff" : "#8E8D8D"}`}
-                />
-              </svg>
+              <div className="hidden md:block">
+                <svg
+                  width="26"
+                  height="23"
+                  viewBox="0 0 26 23"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13 23L25.9904 0.5H0.00961876L13 23Z"
+                    fill={`${activeStep === 1 ? "#fff" : "#8E8D8D"}`}
+                  />
+                </svg>
+              </div>
               Ish tajribasi
             </Button>
             <Button
               onClick={handleStep(2)}
-              className={`flex flex-col w-10 md:text-xl text-[12px] leading-5 md:leading-8 -top-[52px] right-[8.7%] ${
+              sx={{
+                fontSize: "16px",
+                color: "white",
+                "@media (max-width:600px)": {
+                  fontSize: "8px", // размер шрифта для экранов шире 600px
+                },
+              }}
+              className={`flex flex-col w-10 md:text-xl text-[8px] leading-5 md:leading-8 -top-[52px] right-[8.7%] ${
                 activeStep === 2 ? "text-white" : "text-gray-500"
               }`}
             >
-              <svg
-                width="26"
-                height="23"
-                viewBox="0 0 26 23"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M13 23L25.9904 0.5H0.00961876L13 23Z"
-                  fill={`${activeStep === 2 ? "#fff" : "#8E8D8D"}`}
-                />
-              </svg>
+              <div className="hidden md:block">
+                <svg
+                  width="26"
+                  height="23"
+                  viewBox="0 0 26 23"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13 23L25.9904 0.5H0.00961876L13 23Z"
+                    fill={`${activeStep === 2 ? "#fff" : "#8E8D8D"}`}
+                  />
+                </svg>
+              </div>
               Ta'lim
             </Button>
           </div>
         </div>
       </div>
 
-      <div className="relative -top-12 md:top-0" ref={contentRef}>{renderContent()}</div>
+      <div className="relative -top-12 md:top-0" ref={contentRef}>
+        {renderContent()}
+      </div>
     </div>
   );
 }
