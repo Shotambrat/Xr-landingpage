@@ -24,7 +24,7 @@ export default function ProgressMobileStepper() {
           y: 0,
           opacity: 1,
           duration: 1,
-          ease: "bounce.out",
+          // ease: "",
         }
       );
     }
