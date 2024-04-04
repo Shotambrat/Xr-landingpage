@@ -57,7 +57,7 @@ const Modal = ({ closeModal }) => {
 
     try {
       // TODO: Замените 'URL_К_ВАШЕМУ_AJAX.PHP' на реальный URL вашего скрипта на сервере
-      const response = await axios.post("../../ajax.php", formData, {
+      const response = await axios.post("../../xr-ajax.php", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

@@ -25,15 +25,15 @@ const Section1 = () => {
         backgroundSize: "cover",
         backdropFilter: "blur(15px)",
       }}
-      className="flex justify-center w-full h-screen"
+      className="flex justify-center w-full h-screen border-2 border-red-700"
     >
       {/* Container for desktop and mobile view */}
-      <div className="max-w-[1300px] w-full h-full mx-auto px-4">
-      <div style={{boxShadow: "inset 0px -140px 43px -39px #0E3963", zIndex: 10}} className="shadow-wrapper left-0 absolute bottom-0 h-[140px] w-full"> {/* Обертка для тени с более высоким z-index */}
+      <div className="max-w-[1300px] w-full h-full mx-auto px-4 border-2 border-teal-700">
+      <div style={{boxShadow: "inset 0px -140px 43px -39px #0E3963", zIndex: 10}} className="shadow-wrapper left-0 absolute bottom-0 h-[140px] w-full border-2 border-cyan-900"> {/* Обертка для тени с более высоким z-index */}
       {/* Остальной контент, включая заголовок и т.д. */}
     </div>
         {/* Header with logo and contact info */}
-        <header className="justify-between items-center w-full mt-4 md:mt-16 flex">
+        <header className="justify-between items-center w-full mt-4 md:mt-16 flex border-2 border-violet-900">
           <div>
             {/* Website Logo */}
             <a href="/" className="flex items-center py-4 px-2">
@@ -70,9 +70,9 @@ const Section1 = () => {
           </div>
         </header>
         {/* Content */}
-        <div className="p-4 flex justify-center h-auto">
-          <div className="flex flex-row-reverse flex-col md:flex-col md:w-10/12 w-full">
-            <div className="flex-1 ml-6 md:w-[700px] md:mt-[100px] mt-0">
+        <div className="p-4 flex justify-center h-auto border-2 border-violet-400">
+          <div className="flex flex-row-reverse flex-col md:flex-col md:w-10/12 w-full border-2 border-fuchsia-500">
+            <div className="flex-1 ml-6 md:w-[700px] md:mt-[100px] mt-0 border-2 border-stone-700">
               <h1 className="md:text-[28px] text-[20px] font-bold mb-2 text-blue-900">
                 Hashimov Hayrillo Rahmatullaevich
               </h1>
@@ -85,7 +85,7 @@ const Section1 = () => {
                 tajribaga ega.
               </p>
               {/* Button */}
-              <button onClick={openModal} className="bg-blue-800 absolute left-7 md:left-0  md:relative text-white mr-4 p-2 w-[85%] md:w-[300px] rounded-[10px] flex justify-between">
+              <button onClick={openModal} className="bg-blue-800 absolute left-7 md:left-0  md:relative text-white mr-4 p-2 w-[85%] md:w-[300px] rounded-[10px] flex justify-between border-2 border-yellow-300">
                 <div></div>
                 Maslahat olish
                 <svg
@@ -108,7 +108,7 @@ const Section1 = () => {
             </div>
             <div className="flex-1 justify-end flex">
               <img
-                className="md:relative absolute bottom-0 md:bottom-[297px] h-auto scale-75 md:scale-100 md:left-none -left-[60px] md:h-[450px] z-1"
+                className="md:relative absolute bottom-0 md:bottom-[297px] h-auto scale-75 md:scale-100 md:left-none -left-[60px] md:h-[450px] z-1 border-2 border-green-700"
                 src={Avatar}
               />  
             </div>
