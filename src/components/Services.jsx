@@ -1,18 +1,47 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import LeftHeart from "../assets/left-heart.png";
 import RightHeart from "../assets/right-heart.png";
 
 const Services = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768); // 768px - это точка останова для мобильной версии в Tailwind CSS по умолчанию
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Подписаться на событие resize
+    window.addEventListener("resize", handleResize);
+
+    // Отписаться от события
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const texts = [
+    "Aortal-koronar shuntlash",
+    "Yurakning mitral klapanini protezlash",
+    "Aorta anevrizmasi bo'yicha jarrohlik amaliyotlari",
+    "Yurak klapanlarining minimal invaziv jarrohlik amaliyotlari",
+    "Yurakning mitral klapani plastikasi",
+  ];
+
+  const texts2 = [
+    "O’tkir va surunkali o’pka arteriyasi tromboemboliyasidagi jarroxlik amaliyotlari",
+    "Yurakning qon tomirlarini stentlash",
+    "Karotid endoarterektomiya",
+    "Yurakning aortal klapanini protezlashamalyoti",
+  ];
+
   const dots = Array.from({ length: 5 }).map((_, index) => ({
     id: index,
     angle: index * (190 / 5) * (Math.PI / 180) + 0.5, // Равномерно распределяем точки по полукругу
-    label: `Text ${index + 1}`, // Add label text here
+    label: texts[index], // Add label text here
   }));
 
   const dots2 = Array.from({ length: 4 }).map((_, index) => ({
     id: index,
     angle: index * (190 / 5) * (Math.PI / 180) + 0.5, // Равномерно распределяем точки по полукругу
-    label: `Text ${index + 1}`, // Add label text here
+    label: texts2[index], // Add label text here
   }));
 
   return (
@@ -21,31 +50,40 @@ const Services = () => {
       className="h-auto md:h-screen bg-white flex justify-center items-center"
     >
       <div className="h-full md:h-[90%] w-full md:w-[80%] flex flex-col items-center justify-between">
-        <h2 className="text-blue-800 text-xl md:text-5xl">Xizmatlar</h2>
-        <div className="flex w-full h-auto md:h-full scale-75">
+        <h2 className="text-blue-800 font-bold text-xl md:text-5xl">Xizmatlar</h2>
+        <div className="flex flex-col md:flex-row w-full h-auto md:h-full md:mt-8">
           <div className="flex-1 flex justify-end">
             <div
               style={{
                 backgroundImage: `url(${LeftHeart})`,
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
+                // backgroundPosition: isMobile ? "center center" : "left center",
               }}
-              className="relative w-[300px] h-[600px] rounded-tl-full rounded-bl-full flex justify-center items-end"
+              className="relative w-[150px] md:w-[250px] h-[300px] md:h-[500px] rounded-tl-full rounded-bl-full flex justify-center items-end"
             >
               {dots.map(({ id, angle, label }) => {
-                const x = 300 * Math.sin(angle); // 128 - радиус полукруга, x координата на окружности
-                const y = 300 * Math.cos(angle); // y координата на окружности
+                const x = isMobile
+                  ? 140 * Math.sin(angle)
+                  : 250 * Math.sin(angle); // Уменьшаем значение для мобильных устройств
+                const y = isMobile
+                  ? 140 * Math.cos(angle)
+                  : 250 * Math.cos(angle); // То же для `bottom`
                 return (
                   <div
                     key={id}
-                    className="absolute w-[30px] h-[30px] bg-red-500 rounded-full"
+                    className="absolute group cursor-pointer"
                     style={{
-                      left: `${300 - x}px`,
-                      bottom: `${270 + y}px`, // Используем bottom вместо top для инвертирования оси Y
-                      transform: "translate(-50%, -50%)", // Центрирование точек
-                      zIndex: 3,
+                      left: `${isMobile ? 130 - x : 250 - x}px`, // Используйте `isMobile` для определения значения
+                      bottom: `${isMobile ? 119 + y : 220 + y}px`, // Адаптируйте значения `bottom` для мобильной версии
+                      transform: "translate(-50%, -50%)",
                     }}
-                  />
+                  >
+                    <div className="w-[30px] h-[30px] bg-customDots rounded-full z-10 group-hover:bg-blue-900" />
+                    <div className="text-[12px] md:text-xl font-medium absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-full w-[150px] md:w-[250px] group-hover:text-blue-900">
+                      {label}
+                    </div>
+                  </div>
                 );
               })}
             </div>
@@ -58,21 +96,30 @@ const Services = () => {
                 backgroundSize: "cover",
                 backgroundPosition: "100% 100%",
               }}
-              className="relative w-[300px] h-[600px] rounded-tr-full rounded-br-full flex justify-center items-end"
+              className="relative md:h-[500px] md:w-[250px] w-[150px] h-[300px] rounded-tr-full rounded-br-full flex justify-center items-end md:mt-0 mt-[90px]"
             >
               {dots2.map(({ id, angle, label }) => {
-                const x = 300 * Math.sin(angle); // 128 - радиус полукруга, x координата на окружности
-                const y = 300 * Math.cos(angle); // y координата на окружности
+                 const x = isMobile
+                 ? 150 * Math.sin(angle)
+                 : 250 * Math.sin(angle); // Уменьшаем значение для мобильных устройств
+               const y = isMobile
+                 ? 150 * Math.cos(angle)
+                 : 250 * Math.cos(angle); // То же для `bottom`
                 return (
                   <div
                     key={id}
-                    className="absolute w-[30px] h-[30px] bg-red-500 rounded-full"
+                    className="absolute group cursor-pointer"
                     style={{
-                      left: `${x}px`,
-                      bottom: `${270 + y}px`, // Используем bottom вместо top для инвертирования оси Y
-                      transform: "translate(-50%, -50%)", // Центрирование точек
+                      left: `${isMobile ? -10 + x : x}px`,
+                      bottom: `${isMobile? 120 + y : 220 + y}px`,
+                      transform: "translate(-50%, -50%)",
                     }}
-                  />
+                  >
+                    <div className="w-[30px] h-[30px] bg-customDots rounded-full z-10 group-hover:bg-blue-900" />
+                    <div className="absolute font-medium right-0 top-1/2 transform -translate-y-1/2 translate-x-full w-[200px] md:w-[300px] text-[12px] md:text-xl  group-hover:text-blue-900">
+                      {label}
+                    </div>
+                  </div>
                 );
               })}
             </div>
