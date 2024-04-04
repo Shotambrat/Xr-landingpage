@@ -116,7 +116,7 @@ const Services = () => {
                     }}
                   >
                     <div className="w-[30px] h-[30px] bg-customDots rounded-full z-10 group-hover:bg-blue-900" />
-                    <div className="absolute font-medium right-0 top-1/2 transform -translate-y-1/2 translate-x-full w-[200px] md:w-[300px] text-[12px] md:text-xl  group-hover:text-blue-900">
+                    <div className="absolute font-medium right-0 top-1/2 transform -translate-y-1/2 translate-x-full w-[170px] md:w-[300px] text-[12px] md:text-xl  group-hover:text-blue-900">
                       {label}
                     </div>
                   </div>

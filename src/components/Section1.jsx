@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Navbar from "./Navbar";
 import Avatar from "../assets/xr-ava.png";
 import bgImage from "../assets/bg-section1-2.png";
@@ -10,12 +10,11 @@ const Section1 = () => {
 
   const openModal = () => {
     setIsOpenModal(true);
-  }
+  };
 
   const closeModal = () => {
     setIsOpenModal(false);
-  }
-
+  };
 
   return (
     <div
@@ -25,27 +24,27 @@ const Section1 = () => {
         backgroundSize: "cover",
         backdropFilter: "blur(15px)",
       }}
-      className="flex justify-center w-full h-screen border-2 border-red-700"
+      className="md:h-screen h-[450px] w-screen"
     >
-      {/* Container for desktop and mobile view */}
-      <div className="max-w-[1300px] w-full h-full mx-auto px-4 border-2 border-teal-700">
-      <div style={{boxShadow: "inset 0px -140px 43px -39px #0E3963", zIndex: 10}} className="shadow-wrapper left-0 absolute bottom-0 h-[140px] w-full border-2 border-cyan-900"> {/* Обертка для тени с более высоким z-index */}
-      {/* Остальной контент, включая заголовок и т.д. */}
-    </div>
-        {/* Header with logo and contact info */}
-        <header className="justify-between items-center w-full mt-4 md:mt-16 flex border-2 border-violet-900">
-          <div>
-            {/* Website Logo */}
-            <a href="/" className="flex items-center py-4 px-2">
-              <img className="relative top-4" src={Logo} />
+      <div style={{
+          boxShadow: 'inset 0px -83px 30px -20px #0E3963',
+          zIndex: 3
+        }} className="absolute bottom-0 h-0 md:h-[100px] w-full" />
+      <header className="flex justify-center w-full h-auto md:h-1/4">
+        <div className="flex md:items-end items-center h-full w-full md:w-[80%]">
+          <div className="ml-4 mt-4">
+            <a href="/" className="relative md:top-12">
+              <img className="" src={Logo} />
             </a>
           </div>
-          <div className="flex w-full justify-between md:flex-row flex-row-reverse">
+          <div className="w-full h-full items-end flex justify-between md:flex-row flex-row-reverse">
             <div>
               <Navbar />
             </div>
             <div className="text-right">
-              <a href="tel: +998333037799" className="text-lg font-bold">+998 33 303 77 99</a>
+              <a href="tel: +998333037799" className="text-lg font-bold">
+                +998 33 303 77 99
+              </a>
               <div className="flex ">
                 <svg
                   width="15px"
@@ -68,54 +67,54 @@ const Section1 = () => {
               </div>
             </div>
           </div>
-        </header>
-        {/* Content */}
-        <div className="p-4 flex justify-center h-auto border-2 border-violet-400">
-          <div className="flex flex-row-reverse flex-col md:flex-col md:w-10/12 w-full border-2 border-fuchsia-500">
-            <div className="flex-1 ml-6 md:w-[700px] md:mt-[100px] mt-0 border-2 border-stone-700">
-              <h1 className="md:text-[28px] text-[20px] font-bold mb-2 text-blue-900">
+        </div>
+      </header>
+      <main className="flex items-center w-full h-auto md:h-3/4">
+        
+        <div className="flex flex-col items-center w-full md:items-start h-3/4">
+          <div className="w-full flex items-end md:flex-row-reverse md:justify-end">
+            <div className="flex-1 md:absolute md:bottom-0 md:right-[200px]">
+              <img className="" src={Avatar} />
+            </div>
+            <div className="flex-1 md:flex-none md:w-[700px] md:ml-[250px]">
+              <h1 className="text-blue-900 font-extrabold relative md:text-5xl md:left-0 -left-5 md:text-start text-center">
                 Hashimov Hayrillo Rahmatullaevich
               </h1>
-              <p className="md:text-[36px] text-[20px] mb-4 font-extrabold">
-                Yurak-qon tomir jarrohi
-              </p>
-              <p className="md:text-lg text-[13px] mb-6">
+              <p className="font-extrabold md:text-4xl md:mt-4">Yurak-qon tomir jarrohi</p>
+              <p className="text-sm md:text-xl md:mt-4 md:mb-14">
                 Doktor Xayrillo Rahmatullaevich Hoshimov yetakchi yurak-qon
                 tomir jarrohi va intervention kardiolog sifatida 16 yildan ortiq
                 tajribaga ega.
               </p>
-              {/* Button */}
-              <button onClick={openModal} className="bg-blue-800 absolute left-7 md:left-0  md:relative text-white mr-4 p-2 w-[85%] md:w-[300px] rounded-[10px] flex justify-between border-2 border-yellow-300">
-                <div></div>
-                Maslahat olish
-                <svg
-                  width="30px"
-                  height="30px"
-                  viewBox="0 0 400 400"
-                  fill="#fff"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M78.78 247.251C111.354 243.109 136.672 240.07 154.736 238.134C175.79 235.879 192.168 234.567 203.869 234.2L199.547 268.136L194.841 295C231.551 267.291 259.569 247.024 278.894 234.2C298.218 221.376 317.92 209.976 338 200C325.082 188.476 309.47 176.232 291.165 163.267C272.859 150.302 243.761 130.879 203.869 105C206.608 121.693 208.47 133.754 209.457 141.184C210.444 148.614 211.16 155.975 211.607 163.267C198.608 161.423 181.279 158.851 159.619 155.55C137.96 152.249 105.42 147.221 62 140.467C65.8066 168.023 67.7099 187.868 67.7099 200C67.7099 212.132 65.8066 228.599 62 249.4"
-                    stroke="#000000"
-                    stroke-opacity="0.9"
-                    stroke-width="16"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div className="flex-1 justify-end flex">
-              <img
-                className="md:relative absolute bottom-0 md:bottom-[297px] h-auto scale-75 md:scale-100 md:left-none -left-[60px] md:h-[450px] z-1 border-2 border-green-700"
-                src={Avatar}
-              />  
             </div>
           </div>
-          {isOpenModal == true ? <Modal closeModal={closeModal} /> : <></>}
+          <div className="w-[90%] ">
+            <button
+              onClick={openModal}
+              className="w-full md:w-[400px] flex justify-between items-center bg-blue-700 text-white rounded-md h-[50px] md:ml-[250px]"
+            >
+              <div></div>
+              Maslahat olish
+              <svg
+                width="30px"
+                height="30px"
+                viewBox="0 0 400 400"
+                fill="#fff"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M78.78 247.251C111.354 243.109 136.672 240.07 154.736 238.134C175.79 235.879 192.168 234.567 203.869 234.2L199.547 268.136L194.841 295C231.551 267.291 259.569 247.024 278.894 234.2C298.218 221.376 317.92 209.976 338 200C325.082 188.476 309.47 176.232 291.165 163.267C272.859 150.302 243.761 130.879 203.869 105C206.608 121.693 208.47 133.754 209.457 141.184C210.444 148.614 211.16 155.975 211.607 163.267C198.608 161.423 181.279 158.851 159.619 155.55C137.96 152.249 105.42 147.221 62 140.467C65.8066 168.023 67.7099 187.868 67.7099 200C67.7099 212.132 65.8066 228.599 62 249.4"
+                  stroke="#000000"
+                  stroke-opacity="0.9"
+                  stroke-width="16"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 };
