@@ -241,7 +241,7 @@ export default function ProgressMobileStepper() {
                   fontSize: "8px", // размер шрифта для экранов шире 600px
                 },
               }}
-              className={`flex flex-col w-10 md:text-xl text-[8px] leading-5 md:leading-8 -top-[52px] right-[8.7%] ${
+              className={`flex flex-col w-10 md:text-xl text-[8px] leading-5 md:leading-8 -top-[45px] md:-top-[52px] right-[8.7%] ${
                 activeStep === 2 ? "text-white" : "text-gray-500"
               }`}
             >
