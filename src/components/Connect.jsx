@@ -132,12 +132,12 @@ const Connect = () => {
         </div>
         <div className="w-full border-2 border-black md:border-o md:my-0 my-6 md:w-1/2 h-full rounded-[20px] overflow-hidden">
           <iframe
-            src="https://yandex.uz/map-widget/v1/?ll=69.300455%2C41.354099&mode=search&oid=214179343892&ol=biz&z=19.75"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1457.4755841200165!2d69.30559487024432!3d41.31109150926257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38aef575ee1942c7%3A0x505e895b705f2f5b!2z0J3QsNGG0LjQvtC90LDQu9GM0L3Ri9C5INC80LXQtNC40YbQuNC90YHQutC40Lkg0YbQtdC90YLRgA!5e1!3m2!1sru!2s!4v1712552868034!5m2!1sru!2s"
             width="100%"
             height="100%"
-            allowFullScreen="true"
-            style={{ borderRadius: "20px" }}
-            title="Yandex Map"
+            allowfullscreen="true"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
       </div>

@@ -80,7 +80,7 @@ const Services = () => {
                     }}
                   >
                     <div className="w-[30px] h-[30px] bg-customDots rounded-full z-10 group-hover:bg-blue-900" />
-                    <div className="text-[11px] md:text-xl font-medium absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-full w-[150px] md:w-[250px] group-hover:text-blue-900">
+                    <div className="text-[11px] md:text-xl font-medium absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-full w-[150px] md:w-[350px] md:text-end group-hover:text-blue-900">
                       {label}
                     </div>
                   </div>
@@ -116,7 +116,7 @@ const Services = () => {
                     }}
                   >
                     <div className="w-[30px] h-[30px] bg-customDots rounded-full z-10 group-hover:bg-blue-900" />
-                    <div className="absolute font-medium right-0 top-1/2 transform -translate-y-1/2 translate-x-full w-[170px] md:w-[300px] text-[12px] md:text-xl  group-hover:text-blue-900">
+                    <div className="absolute font-medium right-0 top-1/2 transform -translate-y-1/2 translate-x-full w-[170px] md:w-[400px] text-[12px] md:text-xl  group-hover:text-blue-900">
                       {label}
                     </div>
                   </div>
