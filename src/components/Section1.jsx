@@ -48,7 +48,7 @@ const Section1 = () => {
         className="md:hidden absolute bottom-0 h-full w-full"
       />
       {/* box-shadow: inset 100px 0px 80px 12px rgba(0,0,0,0.1); */}
-      <header className="flex justify-center w-full h-auto md:h-1/4">
+      <header className="flex justify-center w-full h-auto">
         <div className="flex md:items-end items-center h-full w-full md:w-[80%]">
           <div className="ml-4 mt-4">
             <a href="/" className="relative md:top-12">

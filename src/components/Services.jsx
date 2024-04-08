@@ -50,7 +50,9 @@ const Services = () => {
       className="h-auto md:h-screen bg-white flex justify-center items-center"
     >
       <div className="h-full md:h-[90%] w-full md:w-[80%] flex flex-col items-center justify-between">
-        <h2 className="text-blue-800 font-bold text-xl md:text-5xl md:mt-0 mt-6 mb-8">Xizmatlar</h2>
+        <h2 className="text-blue-800 font-bold text-xl md:text-5xl md:mt-0 mt-6 mb-8">
+          Xizmatlar
+        </h2>
         <div className="flex flex-col md:flex-row w-full h-auto md:h-full md:mt-8 font-montserrat">
           <div className="flex-1 flex justify-end">
             <div
@@ -69,6 +71,25 @@ const Services = () => {
                 const y = isMobile
                   ? 140 * Math.cos(angle)
                   : 250 * Math.cos(angle); // То же для `bottom`
+
+                if (id == 4) {
+                  return (
+                    <div
+                      key={id}
+                      className="absolute group cursor-pointer"
+                      style={{
+                        left: `${isMobile ? 130 - x : 250 - x}px`, // Используйте `isMobile` для определения значения
+                        bottom: `${isMobile ? 119 + y : 220 + y}px`, // Адаптируйте значения `bottom` для мобильной версии
+                        transform: "translate(-50%, -50%)",
+                      }}
+                    >
+                      <div className="w-[30px] h-[30px] bg-customDots rounded-full z-10 group-hover:bg-blue-900" />
+                      <div className="text-[11px] md:text-xl font-medium absolute left-0 transform -translate-y-1/2 -translate-x-full w-[150px] md:w-[350px] md:text-end group-hover:text-blue-900">
+                        {label}
+                      </div>
+                    </div>
+                  );
+                }
                 return (
                   <div
                     key={id}
@@ -99,24 +120,44 @@ const Services = () => {
               className="relative md:h-[500px] md:w-[250px] w-[150px] h-[300px] rounded-tr-full rounded-br-full flex justify-center items-end md:mt-0 mt-[90px]"
             >
               {dots2.map(({ id, angle, label }) => {
-                 const x = isMobile
-                 ? 150 * Math.sin(angle)
-                 : 250 * Math.sin(angle); // Уменьшаем значение для мобильных устройств
-               const y = isMobile
-                 ? 150 * Math.cos(angle)
-                 : 250 * Math.cos(angle); // То же для `bottom`
+                const x = isMobile
+                  ? 150 * Math.sin(angle)
+                  : 250 * Math.sin(angle); // Уменьшаем значение для мобильных устройств
+                const y = isMobile
+                  ? 150 * Math.cos(angle)
+                  : 250 * Math.cos(angle); // То же для `bottom`
+
+                if (id == 0) {
+                  return (
+                    <div
+                      key={id}
+                      className="absolute group cursor-pointer"
+                      style={{
+                        left: `${isMobile ? -10 + x : x}px`,
+                        bottom: `${isMobile ? 120 + y : 220 + y}px`,
+                        transform: "translate(-50%, -50%)",
+                      }}
+                    >
+                      <div className="w-[30px] h-[30px] bg-customDots rounded-full z-10 group-hover:bg-blue-900"/>
+                      <div className="text-[10px] md:text-xl absolute font-medium right-0 top-1/2 transform -translate-y-1/2 translate-x-full w-[245px] md:w-[500px] text-[12px] md:text-xl group-hover:text-blue-900">
+                        {label}
+                      </div>
+                    </div>
+                  );
+                }
+
                 return (
                   <div
                     key={id}
                     className="absolute group cursor-pointer"
                     style={{
                       left: `${isMobile ? -10 + x : x}px`,
-                      bottom: `${isMobile? 120 + y : 220 + y}px`,
+                      bottom: `${isMobile ? 120 + y : 220 + y}px`,
                       transform: "translate(-50%, -50%)",
                     }}
                   >
                     <div className="w-[30px] h-[30px] bg-customDots rounded-full z-10 group-hover:bg-blue-900" />
-                    <div className="absolute font-medium right-0 top-1/2 transform -translate-y-1/2 translate-x-full w-[170px] md:w-[400px] text-[12px] md:text-xl  group-hover:text-blue-900">
+                    <div className="text-[10px] md:text-xl absolute font-medium right-0 top-1/2 transform -translate-y-1/2 translate-x-full w-[170px] md:w-[500px] text-[12px] md:text-xl  group-hover:text-blue-900">
                       {label}
                     </div>
                   </div>
