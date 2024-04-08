@@ -97,7 +97,7 @@ const Section1 = () => {
               <img className="" src={Avatar} />
             </div>
             <div className="relative -top-[30px] md:top-0 flex-1 md:flex-none md:w-[700px] md:ml-[250px]">
-              <h1 className="text-blue-900 font-extrabold relative md:text-5xl md:left-0 -left-5 md:text-start text-center">
+              <h1 className="text-blue-900 font-extrabold relative text-xl md:text-5xl md:left-0 md:text-start">
                 Hashimov Hayrillo Rahmatullaevich
               </h1>
               <p className="font-montserrat text-2xl font-extrabold md:text-4xl md:mt-4">

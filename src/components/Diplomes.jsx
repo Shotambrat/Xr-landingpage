@@ -1,5 +1,14 @@
 import React, { useRef, useEffect } from "react";
 import Slider from "react-slick";
+import Ser1 from "../assets/ser1.jpg";
+import Ser2 from "../assets/ser2.jpg";
+import Ser3 from "../assets/ser3.jpg";
+// import Ser4 from "../assets/ser4.jpg";
+import Ser5 from "../assets/ser5.jpg";
+import Ser6 from "../assets/ser6.jpg";
+// import Ser7 from "../assets/ser7.jpg";
+import Ser8 from "../assets/ser8.jpg";
+import Ser9 from "../assets/ser9.jpg";
 
 const Diplomes = () => {
   const sliderRef = useRef(null);
@@ -13,7 +22,7 @@ const Diplomes = () => {
   }, []);
 
   const settings = {
-    dots: true,
+    arrows: false,
     infinite: true,
     speed: 2000,
     slidesToShow: 4,
@@ -37,6 +46,7 @@ const Diplomes = () => {
         breakpoint: 1024, // Tailwind CSS breakpoint for 'lg'
         settings: {
           slidesToShow: 4,
+          dots: true,
           slidesToScroll: 1,
         },
       },
@@ -49,15 +59,23 @@ const Diplomes = () => {
         Diplomlar va sertifikatlar
       </h2>
       <div className="h-[150px] md:h-[300px] w-full">
-        <Slider ref={sliderRef} {...settings} className="h-full flex items-center">
-          {/* Ваши слайды здесь */}
-          <div className="h-full p-4 flex items-stretch bg-red-700">
-            Сертификат 1
-          </div>
-          <div className="h-full p-4 flex items-stretch bg-green-700">Сертификат 2</div>
-          <div className="h-full p-4 flex items-stretch bg-gray-700">Сертификат 3</div>
-          <div className="h-full p-4 flex items-stretch bg-blue-700">Сертификат 4</div>
-          {/* Добавьте больше слайдов по желанию */}
+        <Slider
+          ref={sliderRef}
+          {...settings}
+          className="flex items-center h-full"
+        >
+          {[Ser1, Ser2, Ser3, Ser5, Ser6, Ser8, Ser9].map((src, index) => (
+            <div
+              key={index}
+              className="h-full w-full p-4 flex justify-center items-center"
+            >
+              <img
+                src={src}
+                alt={`sertificate ${index + 1}`}
+                className="md:w-full w-1/2 object-cover border-2 ml-[80px] md:ml-0"
+              />
+            </div>
+          ))}
         </Slider>
       </div>
     </div>
