@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
+import toast, { Toaster } from 'react-hot-toast';
 import axios from "axios"; // Убедитесь, что axios импортирован
+
+
+const notify = () => toast.success('Arizangiz qabul qilindi');
 
 const Modal = ({ closeModal }) => {
   const [inputValue, setInputValue] = useState("");
@@ -63,14 +67,8 @@ const Modal = ({ closeModal }) => {
         },
       });
 
-      // Проверьте, что ответ сервера соответствует ожидаемому
-      if (response.data === "1") {
-        // Успешная отправка
-        alert("Форма успешно отправлена");
-      } else {
-        // Обработка ошибок с сервера
-        alert("Ошибка при формеееееееееее");
-      }
+      return notify()
+      
     } catch (error) {
       // Отлов ошибок при отправке формы
       console.error("Ошибка при отправке формы: ", error);
@@ -87,6 +85,7 @@ const Modal = ({ closeModal }) => {
       id="modal"
       className="fixed top-0 left-0 h-screen w-screen flex justify-center items-center bg-white bg-opacity-80 backdrop-blur"
     >
+      <Toaster />
       <div className="h-[70%] w-[400px]">
         <div className="w-full flex justify-end">
           <button

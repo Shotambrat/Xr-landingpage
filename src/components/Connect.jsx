@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+import toast, { Toaster } from 'react-hot-toast';
+const notify = () => toast.success('Arizangiz qabul qilindi');
+
 const Connect = () => {
   const [inputValue, setInputValue] = useState("");
   // Состояние для определения фокуса на инпуте
@@ -61,15 +64,9 @@ const Connect = () => {
           "Content-Type": "multipart/form-data",
         },
       });
+      
+      return notify()
 
-      // Проверьте, что ответ сервера соответствует ожидаемому
-      if (response.data === "1") {
-        // Успешная отправка
-        alert("Форма успешно отправлена");
-      } else {
-        // Обработка ошибок с сервера
-        alert("Ошибка при формеееееееееее");
-      }
     } catch (error) {
       // Отлов ошибок при отправке формы
       console.error("Ошибка при отправке формы: ", error);
@@ -85,6 +82,7 @@ const Connect = () => {
       id="connect"
       className="bg-white w-full md:h-[550px] flex justify-center items-center"
     >
+      <Toaster />
       <div className="w-[90%] h-[80%] flex flex-wrap justify-between">
         <div>
           <div className="md:mt-0 mt-8 h-full md:w-[500px]">
