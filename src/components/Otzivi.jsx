@@ -52,7 +52,7 @@ const Otzivi = () => {
         }
       );
     }
-  }, [activeStep]);
+  }, [leftSlide , rightSlide]);
 
   const renderContent = () => {
     const currentReview = reviews[activeStep];
@@ -159,7 +159,7 @@ const Otzivi = () => {
             {renderContent()}
           </div>
           <div className="h-auto flex justify-center items-center">
-            <button onClick={handleStepRight} className="h-[30px] w-[30px]" disabled={ activeStep == 2 }>
+            <button onClick={handleStepRight} className="h-[30px] w-[30px]" disabled={ activeStep === 2 }>
               {activeStep === 2 ? (
                 <svg
                   width="50px"

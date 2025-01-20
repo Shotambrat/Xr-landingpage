@@ -47,7 +47,7 @@ export default function ProgressMobileStepper() {
           >
             <div className="h-[100px] md:h-full w-[200px] md:w-[350px] flex justify-center items-center">
               <div>
-                <ol className="list-disc leading-1 md:text-2xl text-gray-200 text-[10px] md:text-xl">
+                <ol className="list-disc leading-1  text-gray-200 text-[10px] md:text-xl">
                   <li className="md:mb-3">
                     {t("achievements.1")}
                   </li>
@@ -77,7 +77,7 @@ export default function ProgressMobileStepper() {
           >
             <div className="h-[100px] md:h-full w-[200px] md:w-[350px] flex justify-center items-center">
               <div>
-                <ol className="list-decimal leading-1 md:text-xl text-gray-200 text-[10px] md:text-xl">
+                <ol className="list-decimal leading-1 md:text-xl text-gray-200 text-[10px] ">
                   <li className="md:mb-3">
                    
                     {t('experience.1')}
@@ -115,7 +115,7 @@ export default function ProgressMobileStepper() {
           >
             <div className="h-[100px] md:h-full w-[200px] md:w-[350px] flex justify-center items-center">
               <div>
-                <ol className="list-disc leading-1 md:text-2xl text-gray-200 text-[10px] md:text-xl">
+                <ol className="list-disc leading-1 text-gray-200 text-[10px] md:text-xl">
                   <li className="md:mb-3">
                     
                     {t('education.1')}
