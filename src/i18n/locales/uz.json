@@ -1,0 +1,87 @@
+{
+  "Headers": {
+    "about": "Men haqimda",
+    "specialization": "Ixtisoslik",
+    "services": "Xizmatlar",
+    "contact": "Aloqa"
+  },
+  "name": "Hashimov Hayrillo Rahmatullaevich",
+  "work": "Yurak-qon tomir jarrohi",
+  "description": "Doktor Xayrillo Rahmatullaevich Hoshimov yetakchi yurak-qon tomir jarrohi va intervention kardiolog sifatida 16 yildan ortiq tajribaga ega.",
+  "consultation": "Maslahat olish",
+  "address": "Milliy tibbiyot markazi",
+  "my_achievements": "Mening Yutuglarim",
+  "work_experience": "Ish tajribasi",
+  "achievements": {
+    "1": "2018 yildan buyon AQShning ko'krak jarrohligi jamiyati STS-xalqaro a'zosi hisoblanadi.",
+    "2": "1000 dan ortiq yurak-jarrohlik amaliyotlar.",
+    "3": "Minimal invaziv jarrohlik yangi uslublarini ishlab chiqishda ishtirok etish."
+  },
+  "experience": {
+  "1": "Respublika ixtisoslashtirilgan ilmiy-amaliy tibbiyot markazi, kardiojarroh (2021-2023) yillar, Toshkent, O‘zbekiston.",
+  "2": "Salmon Al Dabbus Yurak Markazi, Al-Adan shifoxonasi, kardiojarroh (2014-2021) yillar, Quvayt davlati.",
+  "3": "Respublika shoshilinch tibbiy yordam ilmiy markazi, kardiojarroh (2010-2013) yillar, Toshkent, O‘zbekiston.",
+  "4": "Andijon davlat tibbiyot instituti klinikasi, kardiojarroh (2008-2010) yillar, Andijon, O‘zbekiston."
+},
+"education": {
+  "title": "Ta'lim",
+  "1": "Toshkent shifokorlar malaka oshirish instituti (2023-2024) yillar, Intervension kardiologiya bo‘yicha qayta tayyorlash kursi.",
+  "2": "Toshkent tibbiyot akademiyasi (2006-2008) yillar, Yurak-qon tomir jarrohligi bo‘yicha klinik ordinatura.",
+  "3": "Andijon davlat tibbiyot instituti (1999-2006) yillar."
+},
+  "success_work": "Muvaffaqiyatli jarrohlik amaliyotlari",
+  "year_experience": "Yillik tajriba",
+  "centers": "Malaka oshirgan markazlar",
+  "happy_clients": "Mamnun mijozlar",
+  "diplomas_certificates": "Diplomlar va sertifikatlar",
+  "specialization": {
+    "title": "Ixtisoslik",
+    "1": "Yurak-qon tomir jarrohligi",
+    "2": "Intervension kardiologiya",
+    "3": "Minimal invaziv kardiojarrohlik"
+  },
+  "texts": [
+    "Aortal-koronar shuntlash",
+    "Yurakning mitral klapanini protezlash",
+    "Aorta anevrizmasi bo'yicha jarrohlik amaliyotlari",
+    "Yurak klapanlarining minimal invaziv jarrohlik amaliyotlari",
+    "Yurakning mitral klapani plastikasi"
+  ],
+  "texts2": [
+    "O’tkir va surunkali o’pka arteriyasi tromboemboliyasidagi jarrohlik amaliyotlari",
+    "Yurakning qon tomirlarini stentlash",
+    "Karotid endoarterektomiya",
+    "Yurakning aortal klapanini protezlash amaliyoti"
+  ],
+  "services_title": "Xizmatlar",
+  "satisfied_patients": "Davollashdan mamnun bemorlar",
+    "reviews": [
+      {
+        "name": "Xaitmetov Boburjon",
+        "text": "Men Hayrullo Rahmatullaevichga hayotimni saqlab qolganligi uchun cheksiz minnatdorman, uning amaliyoti tufayli men bu fikrni yozish imkoniyatiga ega bo‘ldim."
+      },
+      {
+        "name": "Satarov Javohir",
+        "text": "Men Hayrullo Rahmatullaevichga hayotimni saqlab qolganligi uchun cheksiz minnatdorman, uning amaliyoti tufayli men bu fikrni yozish imkoniyatiga ega bo‘ldim."
+      },
+      {
+        "name": "Alisher Ganiyev",
+        "text": "Men Hayrullo Rahmatullaevichga hayotimni saqlab qolganligi uchun cheksiz minnatdorman, uning amaliyoti tufayli men bu fikrni yozish imkoniyatiga ega bo‘ldim."
+      }
+    ],
+    "connect": {
+    "title": "Aloqa ma'lumotlari",
+    "description": "Agar siz qabulga yozilmoqchi bo'lsangiz yoki maslahatga muhtoj bo'lsangiz, murojaat qiling",
+    "placeholder": {
+      "name": "Ismingiz",
+      "phone": "Telefon raqamingiz",
+      "message": "Nima bezovta qilyapti?"
+    },
+    "button": "Ariza Qoldirish",
+    "success": "Arizangiz qabul qilindi",
+    "error": "Ariza yuborishda xatolik yuz berdi"
+  }
+  
+
+
+}

@@ -2,13 +2,15 @@ import React, { useEffect, useState, useRef } from "react";
 import OtziviBg from "../assets/otzivi-bg2.png";
 import OtziviImg1 from "../assets/otzivi-first-img.png";
 import gsap from "gsap";
+import { useTranslation } from 'react-i18next';
 
 const Otzivi = () => {
   const [activeStep, setActiveStep] = useState(0);
   const [rightSlide, setRightSlide] = useState(false);
   const [leftSlide, setLeftSlide] = useState(false);
   const contentRef = useRef();
-
+  const { t } = useTranslation()
+  const reviews = t('reviews', { returnObjects: true });
   const handleStepRight = () => {
     if (activeStep < 3) {
         setRightSlide(true);
@@ -53,76 +55,23 @@ const Otzivi = () => {
   }, [activeStep]);
 
   const renderContent = () => {
-    switch (activeStep) {
-      case 0:
-        return (
-          <div className="w-full h-full bg-white rounded-xl flex flex-col md:flex-row justify-between items-center">
-            <div className="ml-0 md:ml-4 mt-2 md:mt-0 rounded-xl h-[30%] md:h-[80%] w-full md:w-1/2 flex justify-center">
-              <img className="w-[80%] md:w-full md:h-full rounded-xl" src={OtziviImg1} />
-            </div>
-            <div className="md:mt-0 mt-2 w-full md:w-1/2 h-[80%] mr-4 flex flex-col justify-between ">
-              <div className="ml-8">
-                <h3 className="font-bold text-sm md:text-xl mb-4">Хаитметов Бобуржан</h3>
-                <p className="text-[12px] md:text-lg">
-                  Я безмерно благодарен Хайрулло Рахматуллаевичу за спасение
-                  моей жизни, благодаря его операции я смог написать этот отзыв
-                </p>
-              </div>
-              <div className="w-full flex justify-end">
-                <button className="md:mb-0 mb-4 h-[30px] md:h-[35px] w-[100px] md:w-[140px] bg-blue-800 text-white text-center rounded-lg">
-                  batafsil
-                </button>
-              </div>
-            </div>
+    const currentReview = reviews[activeStep];
+  
+    if (!currentReview) return null;
+  
+    return (
+      <div className="w-full h-full bg-white rounded-xl flex flex-col md:flex-row justify-between items-center">
+        <div className="ml-0 md:ml-4 mt-2 md:mt-0 rounded-xl h-[30%] md:h-[80%] w-full md:w-1/2 flex justify-center">
+          <img className="w-[80%] md:w-full md:h-full rounded-xl" src={OtziviImg1} alt={currentReview.name} />
+        </div>
+        <div className="md:mt-0 mt-2 w-full md:w-1/2 h-[80%] mr-4 flex flex-col justify-between ">
+          <div className="ml-8">
+            <h3 className="font-bold text-sm md:text-xl mb-4">{currentReview.name}</h3>
+            <p className="text-[12px] md:text-lg">{currentReview.text}</p>
           </div>
-        );
-      case 1:
-        return (
-            <div className="w-full h-full bg-white rounded-xl flex flex-col md:flex-row justify-between items-center">
-            <div className="ml-0 md:ml-4 mt-2 md:mt-0 rounded-xl h-[30%] md:h-[80%] w-full md:w-1/2 flex justify-center">
-              <img className="w-[80%] md:w-full md:h-full rounded-xl" src={OtziviImg1} />
-            </div>
-            <div className="md:mt-0 mt-2 w-full md:w-1/2 h-[80%] mr-4 flex flex-col justify-between ">
-              <div className="ml-8">
-                <h3 className="font-bold text-sm md:text-xl mb-4">Erling Haaland</h3>
-                <p className="text-[12px] md:text-lg">
-                  Я безмерно благодарен Хайрулло Рахматуллаевичу за спасение
-                  моей жизни, благодаря его операции я смог написать этот отзыв
-                </p>
-              </div>
-              <div className="w-full flex justify-end">
-                <button className="md:mb-0 mb-4 h-[30px] md:h-[35px] w-[100px] md:w-[140px] bg-blue-800 text-white text-center rounded-lg">
-                  batafsil
-                </button>
-              </div>
-            </div>
-          </div>
-        );
-      case 2:
-        return (
-            <div className="w-full h-full bg-white rounded-xl flex flex-col md:flex-row justify-between items-center">
-            <div className="ml-0 md:ml-4 mt-2 md:mt-0 rounded-xl h-[30%] md:h-[80%] w-full md:w-1/2 flex justify-center">
-              <img className="w-[80%] md:w-full md:h-full rounded-xl" src={OtziviImg1} />
-            </div>
-            <div className="md:mt-0 mt-2 w-full md:w-1/2 h-[80%] mr-4 flex flex-col justify-between ">
-              <div className="ml-8">
-                <h3 className="font-bold text-sm md:text-xl mb-4">Kevin De Bruyne</h3>
-                <p className="text-[12px] md:text-lg">
-                  Я безмерно благодарен Хайрулло Рахматуллаевичу за спасение
-                  моей жизни, благодаря его операции я смог написать этот отзыв
-                </p>
-              </div>
-              <div className="w-full flex justify-end">
-                <button className="md:mb-0 mb-4 h-[30px] md:h-[35px] w-[100px] md:w-[140px] bg-blue-800 text-white text-center rounded-lg">
-                  batafsil
-                </button>
-              </div>
-            </div>
-          </div>
-        );
-      default:
-        return null;
-    }
+        </div>
+      </div>
+    );
   };
 
   return (
@@ -137,7 +86,7 @@ const Otzivi = () => {
     >
       <div className="h-full w-full flex flex-col justify-around items-center">
         <h2 className="text-center text-xl md:text-4xl text-white mt-10">
-          Davollashdan mamnun bemorlar
+        {t('satisfied_patients')}
         </h2>
         <div className="h-full w-[80%] mt-8 flex justify-around pb-16">
           <div className="h-auto flex justify-between items-center">

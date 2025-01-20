@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from "react";
 import LeftHeart from "../assets/left-heart.png";
 import RightHeart from "../assets/right-heart.png";
+import { useTranslation } from 'react-i18next';
 
 const Services = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768); // 768px - это точка останова для мобильной версии в Tailwind CSS по умолчанию
+
+  const { t } = useTranslation();
+
+
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -17,20 +23,8 @@ const Services = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const texts = [
-    "Aortal-koronar shuntlash",
-    "Yurakning mitral klapanini protezlash",
-    "Aorta anevrizmasi bo'yicha jarrohlik amaliyotlari",
-    "Yurak klapanlarining minimal invaziv jarrohlik amaliyotlari",
-    "Yurakning mitral klapani plastikasi",
-  ];
-
-  const texts2 = [
-    "O’tkir va surunkali o’pka arteriyasi tromboemboliyasidagi jarroxlik amaliyotlari",
-    "Yurakning qon tomirlarini stentlash",
-    "Karotid endoarterektomiya",
-    "Yurakning aortal klapanini protezlashamalyoti",
-  ];
+  const texts = t('texts', { returnObjects: true });
+  const texts2 = t('texts2', { returnObjects: true });
 
   const dots = Array.from({ length: 5 }).map((_, index) => ({
     id: index,
@@ -44,6 +38,8 @@ const Services = () => {
     label: texts2[index], // Add label text here
   }));
 
+
+
   return (
     <div
       id="services"
@@ -51,7 +47,7 @@ const Services = () => {
     >
       <div className="h-full md:h-[90%] w-full md:w-[80%] flex flex-col items-center justify-between">
         <h2 className="text-blue-800 font-bold text-xl md:text-5xl md:mt-0 mt-6 mb-8">
-          Xizmatlar
+          {t('services_title')}
         </h2>
         <div className="flex flex-col md:flex-row w-full h-auto md:h-full md:mt-8 font-montserrat">
           <div className="flex-1 flex justify-end">

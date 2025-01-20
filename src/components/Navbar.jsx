@@ -1,18 +1,27 @@
 import React, { useState } from 'react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
+import { useTranslation } from 'react-i18next';
+import { useChangeLanguage } from '../hook/changeLanguage';
+
 
 const Navbar = () => {
+  const { t , i18n } = useTranslation();
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      // Закрываем мобильное меню
       setMobileMenuOpen(false);
-      // Плавный скролл к секции
       section.scrollIntoView({ behavior: 'smooth' });
     }
   };
+  const { changeLanguage } = useChangeLanguage();
+
+
+ 
+
+
 
   return (
     <nav className="relative">
@@ -27,19 +36,50 @@ const Navbar = () => {
 
           {/* Primary Navbar items */}
           <div className="hidden md:flex items-center justify-between w-full space-x-1 font-dela">
-            <a href="/" className="py-4 px-2 text-black">Men haqimda</a>
-            <a href="#section-four" onClick={() => scrollToSection('section-four')} className="py-4 px-2 text-black">Ixtisoslik</a>
-            <a href="#services" onClick={() => scrollToSection('services')} className="py-4 px-2 text-black">Xizmatlar</a>
-            <a href="#connect" onClick={() => scrollToSection('connect')} className="py-4 px-2 text-black">Aloqa</a>
+            <a href="/" className="py-4 px-2 text-black">{t('Headers.about')}</a>
+            <a href="#section-four" onClick={() => scrollToSection('section-four')} className="py-4 px-2 text-black">{t('Headers.specialization')}</a>
+            <a href="#services" onClick={() => scrollToSection('services')} className="py-4 px-2 text-black">{t('Headers.services')}</a>
+            <a href="#connect" onClick={() => scrollToSection('connect')} className="py-4 px-2 text-black">{t('Headers.contact')}</a>
           </div>
+         
         </div>
       </div>
       {/* Mobile Menu */}
       <div className={`md:hidden font-dela fixed top-0 left-0 h-full z-40 w-64 bg-white shadow-xl transition-transform duration-300 ease-in-out transform ${mobileMenuOpen ? "translate-x-0" : "-translate-x-full"}`}>
-        <a href="/" className="block py-4 px-4 text-sm text-gray-700 hover:bg-gray-200 mt-24">Men haqimda</a>
-        <a href="#section-four" onClick={() => scrollToSection('section-four')} className="block py-4 px-4 text-sm text-gray-700 hover:bg-gray-200">Ixtisoslik</a>
-        <a href="#services" onClick={() => scrollToSection('services')} className="block py-4 px-4 text-sm text-gray-700 hover:bg-gray-200">Xizmatlar</a>
-        <a href="#connect" onClick={() => scrollToSection('connect')} className="block py-4 px-4 text-sm text-gray-700 hover:bg-gray-200">Aloqa</a>
+      <div className='flex items-center justify-center mt-[40px]'>
+            <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+      {/* O'zbek tili */}
+      <button
+        onClick={() => changeLanguage('uz')}
+        style={{
+          background: 'none',
+          border: 'none',
+          cursor: 'pointer',
+          outline: 'none',
+        }}
+      >
+        <span className={`${i18n.language === 'uz' ? 'text-blue-600 ' : 'text-black'}`} style={{ fontSize: '18px' }}>UZ</span>
+      </button>
+
+      {/* Ingliz tili */}
+      <button
+        onClick={() => changeLanguage('ru')}
+        style={{
+          background: 'none',
+          border: 'none',
+          cursor: 'pointer',
+          outline: 'none',
+        }}
+      >
+               <span className={`${i18n.language === 'ru' ? 'text-blue-600 ' : 'text-black'}`} style={{ fontSize: '18px' }}>RU</span>
+
+      </button>
+    </div>
+            </div>
+        <a href="/" className="block py-4 px-4 text-sm text-gray-700 hover:bg-gray-200 mt-[20px]">{t('Headers.about')}</a>
+        <a href="#section-four" onClick={() => scrollToSection('section-four')} className="block py-4 px-4 text-sm text-gray-700 hover:bg-gray-200">{t('Headers.specialization')}</a>
+        <a href="#services" onClick={() => scrollToSection('services')} className="block py-4 px-4 text-sm text-gray-700 hover:bg-gray-200">{t('Headers.services')}</a>
+        <a href="#connect" onClick={() => scrollToSection('connect')} className="block py-4 px-4 text-sm text-gray-700 hover:bg-gray-200">{t('Headers.contact')}</a>
       </div>
     </nav>
   );

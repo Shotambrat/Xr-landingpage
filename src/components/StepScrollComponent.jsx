@@ -5,15 +5,20 @@ import gsap from "gsap";
 import Serdce from "../assets/serdce.png";
 import LikeStep from "../assets/like-step.png";
 import GradCap from "../assets/grad-cap.png";
+import { useTranslation } from 'react-i18next';
 
 export default function ProgressMobileStepper() {
+  const {t} = useTranslation();
+
   const [activeStep, setActiveStep] = useState(0);
   const contentRef = useRef();
-  const maxSteps = 3; // Определите максимальное количество шагов
+  const maxSteps = 3; 
 
   const handleStep = (step) => () => {
     setActiveStep(step);
   };
+
+
 
   useEffect(() => {
     if (contentRef.current) {
@@ -30,6 +35,8 @@ export default function ProgressMobileStepper() {
     }
   }, [activeStep]);
 
+
+  
   const renderContent = () => {
     switch (activeStep) {
       case 0:
@@ -42,15 +49,13 @@ export default function ProgressMobileStepper() {
               <div>
                 <ol className="list-disc leading-1 md:text-2xl text-gray-200 text-[10px] md:text-xl">
                   <li className="md:mb-3">
-                    2018 yildan buyon AQShning ko'krak jarrohligi jamiyati
-                    STS-xalqaro a'zosi hisoblanadi.
+                    {t("achievements.1")}
                   </li>
                   <li className="md:mb-3">
-                    1000dan ortiq yurak-jarrohlik amaliyotlar.
+                    {t("achievements.2")}
                   </li>
                   <li>
-                    Minimal invaziv jarrohlik yangi uslublarini ishlab chiqishda
-                    ishtirok etish.
+                    {t("achievements.3")}
                   </li>
                 </ol>
               </div>
@@ -73,21 +78,21 @@ export default function ProgressMobileStepper() {
               <div>
                 <ol className="list-decimal leading-1 md:text-xl text-gray-200 text-[10px] md:text-xl">
                   <li className="md:mb-3">
-                    Respublika ixtisoslashtirilgan ilmiy- amaliy tibbiyot
-                    markazi, kardiojarroh (2021- 2023) yillar, Toshkent,
-                    O‘zbekiston
+                   
+                    {t('experience.1')}
                   </li>
                   <li className="md:mb-3">
-                    Salmon Al Dabbus Yurak Markazi, Al - Adan shifoxonasi,
-                    kardiojarroh (2014-2021) yillar, Quvayt davlati.
+                   
+                    {t('experience.2')}
+
                   </li>
                   <li className="md:mb-3">
-                    Respublika shoshilinch tibbiy yordam ilmiy markazi,
-                    kardiojarroh (2010-2013) yillar, Toshkent, O‘zbekiston.
+                    
+                    {t('experience.3')}
+
                   </li>
                   <li>
-                    Andijon davlat tibbiyot instituti klinikasi, karidojarroh
-                    (2008-2010) yillar, Andijon, O‘zbekiston.
+                    {t('experience.4')}
                   </li>
                 </ol>
               </div>
@@ -110,15 +115,14 @@ export default function ProgressMobileStepper() {
               <div>
                 <ol className="list-disc leading-1 md:text-2xl text-gray-200 text-[10px] md:text-xl">
                   <li className="md:mb-3">
-                    Toshkent shifokorlar malaka oshirish instituti (2023-2024)
-                    yillar, Intervension kardiologiya bo‘yicha qayta tayyorlash
-                    kursi.
+                    
+                    {t('education.1')}
                   </li>
                   <li className="md:mb-3">
-                    Toshkent tibbiyot akademiyasi (2006-2008) yillar, Yurak-qon
-                    tomir jarrohligi bo‘yicha klinik ordinatura.
+                   
+                    {t('education.2')}
                   </li>
-                  <li>Andijon davlat tibbiyot instituti (1999-2006) yillar.</li>
+                  <li>{t('education.3')}</li>
                 </ol>
               </div>
             </div>
@@ -137,10 +141,10 @@ export default function ProgressMobileStepper() {
 
   return (
     <div
-      className="h:screen w-full flex-col md:bg-customBlue flex justify-start items-center shadow-md"
+      className=" w-full flex-col md:bg-customBlue flex justify-start items-center shadow-md"
       style={{ boxShadow: "0px -31px 40px 4px rgba(0,73,150,0.77)" }}
     >
-      <div className="h-[300px] w-full bg-customBlue flex justify-center  items-center">
+      <div className="h-[300px] md:h-[450px] w-full bg-customBlue flex justify-center  items-center">
         <div className="flex flex-col justify-center items-center w-full px-4">
           <MobileStepper
             variant="progress"
@@ -201,7 +205,7 @@ export default function ProgressMobileStepper() {
                   />
                 </svg>
               </div>
-              Mening yutuqlarim
+               {t('my_achievements')}
             </Button>
             <Button
               onClick={handleStep(1)}
@@ -230,7 +234,8 @@ export default function ProgressMobileStepper() {
                   />
                 </svg>
               </div>
-              Ish tajribasi
+              
+              {t('work_experience')}
             </Button>
             <Button
               onClick={handleStep(2)}
@@ -259,7 +264,8 @@ export default function ProgressMobileStepper() {
                   />
                 </svg>
               </div>
-              Ta'lim
+              
+              {t('education.title')}
             </Button>
           </div>
         </div>

@@ -4,17 +4,28 @@ import Avatar from "../assets/xr-ava.png";
 import bgImage from "../assets/bg-section1-2.png";
 import Logo from "../assets/logo.png";
 import Modal from "./Modal";
-
+import { useTranslation } from 'react-i18next';
+import { useChangeLanguage } from '../hook/changeLanguage';
+import 'country-flag-icons/react/3x2'; // Bayroq ikonkalari uchun import
 const Section1 = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const {t , i18n} = useTranslation();
 
-  const openModal = () => {
-    setIsOpenModal(true);
-  };
+  const { changeLanguage } = useChangeLanguage();
 
-  const closeModal = () => {
-    setIsOpenModal(false);
-  };
+
+
+
+
+
+  const handleModalStatusChange = () => setIsOpenModal(!isOpenModal)
+
+ 
+
+
+
+
+
 
   return (
     <div
@@ -84,8 +95,38 @@ const Section1 = () => {
                     fill="#5F6379"
                   />
                 </svg>
-                <p className="text-xs ml-2">Milliy tibbiyot markazi</p>
+                <p className="text-xs ml-2"> {t('address')}</p>
               </div>
+            </div>
+            <div className='min-h-[56px] hidden md:flex items-center'>
+            <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+      {/* O'zbek tili */}
+      <button
+        onClick={() => changeLanguage('uz')}
+        style={{
+          background: 'none',
+          border: 'none',
+          cursor: 'pointer',
+          outline: 'none',
+        }}
+      >
+        <span className={`${i18n.language === 'uz' ? 'text-blue-600 ' : 'text-black'}`} style={{ fontSize: '24px' }}>UZ</span>
+      </button>
+
+      {/* Ingliz tili */}
+      <button
+        onClick={() => changeLanguage('ru')}
+        style={{
+          background: 'none',
+          border: 'none',
+          cursor: 'pointer',
+          outline: 'none',
+        }}
+      >
+               <span className={`${i18n.language === 'ru' ? 'text-blue-600 ' : 'text-black'}`} style={{ fontSize: '24px' }}>RU</span>
+
+      </button>
+    </div>
             </div>
           </div>
         </div>
@@ -98,26 +139,24 @@ const Section1 = () => {
             </div>
             <div className="relative -top-[30px] md:top-0 flex-1 md:flex-none md:w-[700px] md:ml-[250px]">
               <h1 className="text-blue-900 font-extrabold relative text-xl md:text-5xl md:left-0 md:text-start">
-                Hashimov Hayrillo Rahmatullaevich
+                {t('name')}
               </h1>
               <p className="font-montserrat text-2xl font-extrabold md:text-4xl md:mt-4">
-                Yurak-qon tomir jarrohi
+                {t('work')}
               </p>
               <p className=" hidden md:flex text-sm md:text-xl md:mt-4 md:mb-14 md:w-[600px] font-montserrat">
-                Doktor Xayrillo Rahmatullaevich Hoshimov yetakchi yurak-qon
-                tomir jarrohi va intervention kardiolog sifatida 16 yildan ortiq
-                tajribaga ega.
+                
+                {t('description')}
               </p>
             </div>
           </div>
           <div className="w-[90%] ">
             <button
-              onClick={openModal}
+              onClick={handleModalStatusChange}
               className="w-full md:w-[400px] flex justify-between items-center bg-blue-700 text-white rounded-md h-[50px] md:ml-[250px] font-montserrat"
             >
-              <div></div>
               <p className="ml-4">
-              Maslahat olish
+              {t('consultation')}
               </p>
               <svg
               className="mr-4"
@@ -136,7 +175,7 @@ const Section1 = () => {
                 />
               </svg>
             </button>
-            {isOpenModal && <Modal closeModal={closeModal} />}
+            {isOpenModal && <Modal closeModal={handleModalStatusChange} />}
           </div>
         </div>
       </main>
