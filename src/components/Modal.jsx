@@ -18,19 +18,20 @@ const Modal = ({ closeModal }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const formData = new FormData();
-    formData.append("name", data.name);
-    formData.append("phone", data.phone);
-    formData.append("message", data.message);
+    const body = {
+      name: data.name,
+      phone: data.phone,
+      message: data.message,
+    };
 
     try {
-      const response = await Axios.post("salom-user-zayafka", formData, {
+      const response = await Axios.post("application/send", JSON.stringify(body), {
         headers: {
-          "Content-Type": "multipart/form-data",
+          "Content-Type": "application/json",
         },
       });
 
-      if (response.status === 200) {
+      if (response.status === 201) {
         toast.success(t("connect.success"));
         setData({ name: "", phone: "", message: "" });
       } else {
@@ -72,12 +73,15 @@ const Modal = ({ closeModal }) => {
         <input
                 placeholder={t('connect.placeholder.name')}
                 className="h-[50px] w-full pl-5 pb-1 mb-10 items-center border-2 border-blue-900 rounded-[10px]"
+                required
                 value={data.name}
                 onChange={(e) => handleInputChange('name', e.target.value)}
               />
           <PatternFormat
                 format="+998 ## ###-##-##"
                 mask="_"
+                required
+
                 placeholder={t("connect.placeholder.phone")}
                 className="h-[50px] w-full pl-5 pb-1 mb-10 items-center border-2 border-blue-900 rounded-[10px]"
                 value={data.phone}
@@ -87,6 +91,8 @@ const Modal = ({ closeModal }) => {
 <textarea
                 placeholder={t('connect.placeholder.message')}
                 name="message"
+                required
+
                 className="h-[50px] w-full pl-5 pt-[10px] pb-1 mb-10 items-center border-2 border-blue-900 rounded-[10px]"
                 value={data.message}
                 onChange={(e) => handleInputChange('message', e.target.value)}

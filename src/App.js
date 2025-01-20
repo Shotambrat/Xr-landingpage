@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import './i18n/i18n'; 
 import { useTranslation } from 'react-i18next';
 import {getLanguageFromStorageOrCookie} from './hook/getLocaleFromStorage'
+import Axios from './lib/axios';
 
 
 function App() {
@@ -29,6 +30,19 @@ function App() {
     }
   }, [i18n]);
 
+
+  useEffect(() => {
+    const recordVisit = async () => {
+      try {
+         const res = await Axios.post('counter/add?button=VISIT');
+         console.log(res)
+      } catch (error) {
+        console.error('Error recording visit:', error);
+      }
+    };
+
+    recordVisit();
+  }, []);
  
 
 

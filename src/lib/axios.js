@@ -1,8 +1,8 @@
 import axios from "axios";
-import DOMPurify from "dompurify"; 
+import DOMPurify from "dompurify";
 
 const activeRequests = {};
-const DAILY_LIMIT = 2;
+const DAILY_LIMIT = 6;
 
 const getDeviceId = () => {
   let deviceId = localStorage.getItem("deviceId");
@@ -31,7 +31,7 @@ const updateRequestState = (deviceId, count, date) => {
 const sanitizeUrl = (url) => DOMPurify.sanitize(url);
 
 const Axios = axios.create({
-  baseURL: sanitizeUrl("https://api.example.com"), 
+  baseURL: sanitizeUrl("https://pmc-test.mrjtrade.uz/api/"),
   timeout: 10000,
   headers: {
     "Content-Type": "application/json",
@@ -61,6 +61,9 @@ Axios.interceptors.request.use(
 
     const requestKey = `${deviceId}_${config.method}_${sanitizeUrl(config.url)}`;
     activeRequests[requestKey] = true;
+
+    config.headers['auth-key'] = 'dcs54csdf8wefsf45232r!sd5af?dff8w7fw8efwefwef8';
+
     return config;
   },
   (error) => {
