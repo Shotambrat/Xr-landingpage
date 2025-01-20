@@ -14,22 +14,22 @@ const Footer = () => {
     <div className="bg-blue-700 w-full h-[200px] md:h-[300px] flex justify-center items-center">
       <div className="w-full md:w-[70%] h-[70%] md:h-[50%] flex justify-between items-center">
         <div className="h-2/3 md:h-full md:w-1/3 ml-6 flex items-center">
-          <img className="h-full" src={FooterLogo} />
+          <img alt='image'  className="h-full" src={FooterLogo} />
         </div>
         <div className="flex-1 flex md:flex-row flex-col items-center md:justify-between">
           <div className="flex justify-around md:justify-between w-[80%] md:w-1/3 items-center">
             <div>
-              <a href="https://t.me/drhhart" target="_blank">
+              <a href="https://t.me/drhhart">
                <RiTelegram2Fill className='text-white w-8 h-8' />
               </a>
             </div>
             <div>
-              <a href="https://www.instagram.com/dr.khayrullah?igsh=a3I5emMwMmhjcW1t&utm_source=qr" target="_blank">
+              <a href="https://www.instagram.com/dr.khayrullah?igsh=a3I5emMwMmhjcW1t&utm_source=qr">
                 <BsInstagram className='text-white w-8 h-8' />
               </a>
             </div>
             <div>
-              <a href="https://www.facebook.com/profile.php?id=100077919506611&mibextid=LQQJ4d" target="_blank">
+              <a href="https://www.facebook.com/profile.php?id=100077919506611&mibextid=LQQJ4d">
                 <ImFacebook2 className='text-white w-8 h-8' />
               </a>
             </div>

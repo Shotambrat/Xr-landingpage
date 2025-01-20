@@ -63,7 +63,7 @@ const Section1 = () => {
         <div className="flex md:items-end items-center h-full w-full md:w-[80%]">
           <div className="ml-4 mt-4">
             <a href="/" className="relative md:top-12">
-              <img className="" src={Logo} />
+              <img className="" src={Logo} alt='logo' />
             </a>
           </div>
           <div className="w-full h-full items-end flex justify-between md:flex-row flex-row-reverse mr-4 md:mr-0">
@@ -135,7 +135,7 @@ const Section1 = () => {
         <div className="flex flex-col items-center w-full md:items-start h-3/4">
           <div className="w-full flex items-end md:flex-row-reverse md:justify-end">
             <div className="flex-1 md:absolute md:bottom-0 md:right-[200px]">
-              <img className="" src={Avatar} />
+              <img alt='avatar' className="" src={Avatar} />
             </div>
             <div className="relative -top-[30px] md:top-0 flex-1 md:flex-none md:w-[700px] md:ml-[250px]">
               <h1 className="text-blue-900 font-extrabold relative text-xl md:text-5xl md:left-0 md:text-start">

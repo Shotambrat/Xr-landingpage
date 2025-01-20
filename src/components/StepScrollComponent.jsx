@@ -64,6 +64,7 @@ export default function ProgressMobileStepper() {
               <img
                 className="relative md:-top-20 md:-right-20 w-[100px] md:w-full"
                 src={Serdce}
+                alt='serdce'
               />
             </div>
           </div>
@@ -101,6 +102,7 @@ export default function ProgressMobileStepper() {
               <img
                 className="relative md:-top-20 md:-right-20 w-[100px] md:w-full"
                 src={LikeStep}
+                alt='like'
               />
             </div>
           </div>
@@ -130,6 +132,7 @@ export default function ProgressMobileStepper() {
               <img
                 className="relative md:-top-20 md:-right-20 w-[100px] md:w-full"
                 src={GradCap}
+                alt='grad'
               />
             </div>
           </div>
