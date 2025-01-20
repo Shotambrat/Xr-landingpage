@@ -6,7 +6,6 @@ import Logo from "../assets/logo.png";
 import Modal from "./Modal";
 import { useTranslation } from 'react-i18next';
 import { useChangeLanguage } from '../hook/changeLanguage';
-import 'country-flag-icons/react/3x2'; // Bayroq ikonkalari uchun import
 const Section1 = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const {t , i18n} = useTranslation();
