@@ -28,7 +28,6 @@ const updateRequestState = (deviceId, count, date) => {
   localStorage.setItem("requestState", JSON.stringify(state));
 };
 
-// So'rov URL-larini sanitizatsiya qilish
 const sanitizeUrl = (url) => DOMPurify.sanitize(url);
 
 const Axios = axios.create({

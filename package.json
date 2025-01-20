@@ -30,7 +30,8 @@
     "react-slick": "^0.30.2",
     "slick-carousel": "^1.8.1",
     "tailwindcss": "^3.4.3",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "zod": "^3.24.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -61,6 +62,17 @@
   "devDependencies": {
     "eslint": "^8.57.0",
     "eslint-config-react-app": "^7.0.1",
-    "eslint-plugin-react": "^7.34.1"
-  }
+    "eslint-plugin-react": "^7.34.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.1",
+    "prettier": "^3.4.2"
+  },
+  "lint-staged": {
+  "**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+    "prettier --write",
+    "eslint --fix",
+    "git add"
+  ]
+}
+
 }
